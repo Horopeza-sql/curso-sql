@@ -317,6 +317,164 @@ Antes de escribir una sola línea de SQL, vamos a entender **qué estamos hacien
 
 ---
 
+## 0.4 Alcance de aprender SQL
+
+Antes de meterte de lleno, necesitas saber **qué vas a poder hacer** cuando termines esta Fase 1, y **qué no**. Esto evita frustraciones y expectativas equivocadas.
+
+=== "🎯 ¿Qué podrás hacer?"
+
+    Al terminar la Fase 1 serás capaz de:
+
+    - **Consultar** cualquier base de datos relacional con confianza.
+    - **Filtrar, ordenar y agrupar** datos para responder preguntas de negocio.
+    - **Combinar tablas** (`JOIN`) para cruzar información de varias fuentes.
+    - **Crear, modificar y eliminar** estructuras de datos (`CREATE`, `ALTER`, `DROP`).
+    - **Diseñar** una base de datos pequeña desde cero (tu proyecto del curso).
+    - **Optimizar** consultas básicas para que no se vuelvan lentas.
+    - **Trabajar** con MySQL, y adaptarte a PostgreSQL, SQL Server o SQLite sin empezar de cero.
+
+    !!! tip "Lo más importante"
+        No vas a memorizar SQL. Vas a aprender a **pensar en datos**: qué pregunta quiero responder, qué tablas necesito, cómo las uno.
+
+=== "🚫 ¿Qué NO cubre este curso?"
+
+    Para que no te lleves una sorpresa, esto **no** lo verás en la Fase 1:
+
+    - **Big Data** (millones de filas, Hadoop, Spark). Eso es otra liga.
+    - **Administración avanzada** de servidores (replicación, backups, tuning profundo).
+    - **PL/SQL, T-SQL** o procedimientos almacenados avanzados (se mencionan, no se profundiza).
+    - **Python, R, Power BI o Tableau**. Eso viene en las siguientes fases del programa.
+    - **ETL** y pipelines de datos. Fase posterior.
+
+    !!! warning "Sé honesto contigo mismo"
+        SQL es una herramienta, no una carrera completa. Si tu meta es ser **Analista de Datos**, SQL es la base, pero no el techo.
+
+=== "📊 Niveles de dominio"
+
+    Así se ve el camino típico de un analista con SQL:
+
+    | Nivel | Qué sabes hacer | Tiempo (realista) | Tiempo (intensivo) |
+    |---|---|---|---|
+    | **Básico** | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT` | 3-4 semanas | 1-2 semanas |
+    | **Intermedio** | `JOIN`, `GROUP BY`, subconsultas, funciones | 2-3 meses | 1 mes |
+    | **Avanzado** | CTEs, window functions, optimización | 4-6 meses | 2-3 meses |
+    | **Experto** | Modelado, tuning, arquitectura | 1+ año | 6+ meses |
+
+    !!! info "¿Dónde vas a estar al terminar la Fase 1?"
+        Entre **Básico sólido** e **Intermedio**. Es suficiente para aplicar a puestos junior de análisis de datos.
+
+    !!! tip "¿Qué ritmo elegir?"
+        - **Ritmo realista:** 1-2 horas al día, 5 días a la semana. Compatible con trabajo/estudios.
+        - **Ritmo intensivo:** 3-4 horas al día, 6 días a la semana. Solo si tienes tiempo y quieres acelerar.
+
+        No hay premio por ir rápido. **Lo importante es que entiendas, no que termines.**
+
+=== "💼 Aplicación real"
+
+    SQL no vive solo. Encaja en un ecosistema:
+
+    ```
+    SQL (extraer)  →  Python/R (analizar)  →  Power BI/Tableau (visualizar)
+    ```
+
+    - **SQL** responde *"¿qué pasó?"* (consultas, agregaciones).
+    - **Python/R** responde *"¿por qué pasó?"* (estadística, modelos).
+    - **Power BI/Tableau** responde *"¿cómo lo muestro?"* (dashboards).
+
+    Aprender SQL primero tiene sentido: **es la puerta de entrada a los datos**. Sin datos, no hay análisis.
+
+    !!! tip "Conexión con el proyecto del curso"
+        En la sección **0.9** definirás el proyecto que construirás paso a paso: un sistema de ventas, facturación y cobranza. Ahí aplicarás todo lo que aprendas aquí.
+---
+
+## 0.5 Posibles trabajos al dominar SQL
+
+Ahora que sabes **qué vas a poder hacer**, la pregunta natural es: *"¿y esto para qué me sirve laboralmente?"*.
+
+La respuesta corta: **SQL abre puertas en casi cualquier área que toque datos**. La respuesta larga está en las pestañas.
+
+=== "💼 Perfiles que usan SQL"
+
+    SQL no es exclusivo de "analistas de datos". Lo usan a diario:
+
+    | Perfil | Qué hace con SQL |
+    |---|---|
+    | **Analista de Datos** | Extrae, limpia y analiza datos para responder preguntas de negocio. |
+    | **Analista BI** | Construye dashboards y reportes para la empresa. |
+    | **Data Engineer** | Diseña y mantiene los pipelines que mueven los datos. |
+    | **Científico de Datos** | Extrae datos para modelos estadísticos y de machine learning. |
+    | **Analista de Marketing** | Mide campañas, segmenta clientes, calcula ROI. |
+    | **Product Analyst** | Analiza el comportamiento de usuarios en un producto digital. |
+    | **Analista Financiero** | Reportes, conciliaciones, proyecciones. |
+    | **Analista de Operaciones** | Métricas de producción, logística, inventario. |
+    | **QA / Soporte técnico** | Valida datos, diagnostica incidencias. |
+    | **Gerentes y directores** | Toman decisiones basadas en datos que ellos mismos consultan. |
+
+    !!! tip "Lo importante"
+        No necesitas ser "analista de datos" para que SQL te sirva. Si tu trabajo **toca datos**, SQL te hace mejor en lo que ya haces.
+
+=== "🌎 Mercado real (sin humo)"
+
+    Aquí es donde muchos cursos mienten. Vamos con la verdad:
+
+    - **SQL aparece en la mayoría de ofertas** de datos, BI, análisis y afines. Es **requisito**, no plus.
+    - **No basta con SQL** para conseguir trabajo. Necesitas además: Excel, una herramienta de visualización (Power BI/Tableau), y saber contar una historia con datos. Python y R suman, pero no son obligatorios para empezar.
+    - **El mercado hispanohablante es heterogéneo.** Lo que piden en España, México, Colombia, Argentina, Chile o Venezuela varía en herramientas, nivel y expectativas.
+    - **El inglés suma mucho.** Muchas ofertas remotas bien pagadas están en inglés.
+    - **La experiencia pesa más que los títulos.** Un portafolio con 3 proyectos reales vale más que 10 certificados.
+
+    !!! warning "Sobre salarios"
+        No vas a encontrar cifras en este curso. **Es a propósito.** Los salarios varían por país, industria, tamaño de empresa, nivel de inglés y experiencia. Cualquier número que veas en internet (incluidos otros cursos) es un promedio que probablemente no aplica a tu caso. **Investiga el mercado de tu país y tu sector** cuando estés listo para buscar trabajo.
+
+    !!! tip "Dónde buscar ofertas (nombres, sin links)"
+        - **LinkedIn** (el estándar global).
+        - **Torre** e **Ideas en Red** (Latinoamérica).
+        - **GetOnBoard** (tech, LATAM + remoto).
+        - **RemoteOK** y **Wellfound** (remoto internacional).
+        - **Ofertas de tu país** en portales locales de empleo.
+
+        **Tip:** busca "analista de datos", "BI analyst", "data analyst" y lee **20 ofertas reales**. Anota qué piden. Eso te dirá exactamente qué aprender después de SQL.
+
+=== "🎯 SQL como habilidad transversal"
+
+    El mayor error al hablar de SQL es pensar que es **un destino**. No lo es. Es una **habilidad transversal** que se combina con lo que ya sabes:
+
+    ```
+    Tu área actual  +  SQL  =  Perfil potenciado
+    ```
+
+    Ejemplos concretos:
+
+    - **Contador + SQL** → puede auditar y conciliar datos masivos sin depender de TI.
+    - **Marketero + SQL** → segmenta clientes y mide campañas por sí mismo.
+    - **Médico + SQL** → analiza historiales clínicos para investigación.
+    - **Vendedor + SQL** → detecta patrones de compra y prioriza clientes.
+    - **RRHH + SQL** → analiza rotación, desempeño y contratación.
+
+    !!! tip "La regla de oro"
+        **No compites contra analistas de datos. Compites contra personas de tu área que no saben SQL.** Esa es tu ventaja real.
+
+=== "⚠️ Lo que NO te van a decir"
+
+    Verdades incómodas que otros cursos omiten:
+
+    !!! warning "SQL no te hace analista por sí solo"
+        Saber `SELECT`, `JOIN` y `GROUP BY` es el **piso**, no el techo. Un analista completo también sabe Excel, visualización, estadística básica y comunicación.
+
+    !!! warning "El primer trabajo es el más difícil"
+        Vas a necesitar paciencia. Muchas ofertas piden 2-3 años de experiencia para puestos junior. **Contrarresta con portafolio, proyectos reales y networking.**
+
+    !!! warning "Aprender SQL no garantiza trabajo remoto bien pagado"
+        El trabajo remoto internacional existe, pero exige **inglés fluido**, **portfolio sólido** y muchas veces **zona horaria compatible**. No es para todos, y no llega el primer mes.
+
+    !!! warning "La IA no reemplaza SQL (todavía)"
+        Herramientas como ChatGPT escriben SQL, sí. Pero **alguien tiene que validar, adaptar y decidir**. Ese alguien es quien entiende SQL. La IA es una calculadora, no un analista.
+
+    !!! danger "Desconfía de promesas mágicas"
+        Si un curso, canal o influencer te promete **trabajo garantizado en 3 meses**, desconfía. El aprendizaje real toma tiempo, y el mercado laboral no funciona con garantías. **Este curso no te promete trabajo: te da las bases para que tú lo consigas.**
+
+---
+
 !!! tip "💡 Consejo antes de seguir"
 
     No te agobies con la cantidad de temas. El curso está diseñado para ir **paso a paso**. Si algo no queda claro, sigue adelante y vuelve después. La comprensión llega con la práctica, no con la repetición teórica.
