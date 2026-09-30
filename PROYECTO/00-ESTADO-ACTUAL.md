@@ -1,46 +1,48 @@
-# Estado Actual del Proyecto — Curso SQL
+# Estado Actual del Proyecto — SQL para Análisis de Datos
 
-**Última actualización:** 2025-09-30
+**Última actualización:** 2025-09-30 (sesión 2)
 
 ## 🎯 Fase actual
-Esqueleto del curso creado. Listo para empezar a escribir contenido.
+Estructura del programa redefinida. Listo para escribir contenido real.
 
 ## ✅ Completado
-- Git 2.56.0 instalado y configurado
-- Python 3.12.10 instalado (Microsoft Store)
-- Cuenta GitHub: Horopeza-sql
-- Repositorio `curso-sql` creado y clonado
-- Sistema de continuidad `PROYECTO/` funcionando
-- MkDocs 1.6.1 + Material 9.7.7 instalados
-- `mkdocs.yml` configurado con tema, colores y navegación
-- `docs/` con 8 archivos base (index + 7 secciones)
-- Sitio funcionando en local (`python -m mkdocs serve`)
+- Todo lo de la sesión 1 (Git, Python, MkDocs, esqueleto, publicación)
+- Curso renombrado: "SQL para Análisis de Datos"
+- Visión de programa completo (5 fases) definida
+- Roadmap del programa creado (`docs/roadmap.md`)
+- Portada actualizada (`docs/index.md`)
+- `mkdocs.yml` actualizado con nueva estructura
+- Navegación agrupada: "Fase 1 · SQL" contiene las 7 secciones
 
 ## 🔜 Próximos pasos
-1. Publicar en GitHub Pages (`python -m mkdocs gh-deploy`)
-2. Empezar a escribir la sección 0 (Introducción)
-3. Luego sección 1 (Básicos)
-4. Continuar con el resto
+1. Escribir Sección 0 completa (10 temas)
+2. Escribir Sección 1 (Básicos)
+3. Continuar con el resto
+4. Añadir recursos gratuitos en español
 
 ## 📁 Estructura actual
 curso-sql/
 ├── mkdocs.yml
 ├── .gitignore
 ├── PROYECTO/
-│   ├── 00-ESTADO-ACTUAL.md
-│   └── HISTORIAL/
-│       └── 2025-09-30.md
+│ ├── 00-ESTADO-ACTUAL.md
+│ └── HISTORIAL/
+│ ├── 2025-09-30.md
+│ └── 2025-09-30-sesion2.md
 └── docs/
-    ├── index.md
-    ├── 00-introduccion.md
-    ├── 01-basicos.md
-    ├── 02-intermedios.md
-    ├── 03-avanzados.md
-    ├── 04-objetos-bd.md
-    ├── 05-administracion.md
-    └── 06-referencia-rapida.md
+├── index.md
+├── roadmap.md
+├── 00-introduccion.md
+├── 01-basicos.md
+├── 02-intermedios.md
+├── 03-avanzados.md
+├── 04-objetos-bd.md
+├── 05-administracion.md
+└── 06-referencia-rapida.md
 
 ## ⚠️ Notas importantes
-- **Comandos:** usar `python -m mkdocs` en lugar de `mkdocs` (Python de Microsoft Store no añade scripts al PATH).
+- **Comandos:** usar `python -m mkdocs` (Python de Microsoft Store no añade scripts al PATH).
 - **Trabajo desde 2 PCs:** `git pull` al llegar, `git push` al salir.
 - **Sistema de continuidad:** actualizar este archivo + crear uno nuevo en `HISTORIAL/` al final de cada sesión.
+- **Formato de contenido:** pestañas (💡 ¿Qué es? / 🔬 ¿Cómo funciona? / 📝 Sintaxis / 💻 Ejemplo / ⚠️ Errores comunes / 🎯 Ejercicio).
+- **Proyecto del curso:** Sistema de Ventas / Facturación / Cobranza.
