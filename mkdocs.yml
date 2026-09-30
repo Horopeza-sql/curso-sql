@@ -1,5 +1,5 @@
-site_name: Curso SQL
-site_description: Curso completo de SQL en español, desde cero hasta administración.
+site_name: SQL para Análisis de Datos
+site_description: Curso completo de SQL orientado al análisis de datos. Fase 1 del programa de Análisis de Datos desde Cero.
 site_author: Horopeza-sql
 site_url: https://Horopeza-sql.github.io/curso-sql/
 
@@ -53,10 +53,12 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
-  - 0. Introducción: 00-introduccion.md
-  - 1. Básicos: 01-basicos.md
-  - 2. Intermedios: 02-intermedios.md
-  - 3. Avanzados: 03-avanzados.md
-  - 4. Objetos de BD: 04-objetos-bd.md
-  - 5. Administración: 05-administracion.md
-  - 6. Referencia Rápida: 06-referencia-rapida.md
+  - Roadmap del programa: roadmap.md
+  - "Fase 1 · SQL":
+    - 0. Introducción: 00-introduccion.md
+    - 1. Básicos: 01-basicos.md
+    - 2. Intermedios: 02-intermedios.md
+    - 3. Avanzados: 03-avanzados.md
+    - 4. Objetos de BD: 04-objetos-bd.md
+    - 5. Administración: 05-administracion.md
+    - 6. Referencia Rápida: 06-referencia-rapida.md
