@@ -25,6 +25,10 @@ Antes de escribir una sola línea de SQL, vamos a entender **qué estamos hacien
 
     Como **analista de datos**, tu trabajo consistirá en **hacer preguntas** a esas bases de datos y obtener respuestas útiles para el negocio.
 
+    !!! tip "📺 Video recomendado"
+        ¿Prefieres una explicación en video? Mira este short:
+        [🔗 ¿Qué es exactamente una base de datos?](https://youtube.com/shorts/L9hJYVCFOB8?si=yW9dq8elKvYJImlC)
+
 === "🔬 ¿Cómo funciona?"
 
     Técnicamente, una base de datos es un **conjunto de datos almacenados sistemáticamente** en un soporte informático, diseñado para:
@@ -136,6 +140,10 @@ Antes de escribir una sola línea de SQL, vamos a entender **qué estamos hacien
     Si una base de datos fuera un archivador, **SQL sería el idioma** en el que le pides las cosas.
 
     Para un **analista de datos**, SQL es **la herramienta #1**. El 90% de tu trabajo empezará con una consulta SQL.
+
+    !!! tip "📺 Video recomendado"
+        ¿Prefieres una explicación en video? Mira este:
+        [🔗 ¿Qué es SQL? 🤓](https://youtu.be/Atpj2UsF65M)
 
 === "🔬 ¿Cómo funciona?"
 
