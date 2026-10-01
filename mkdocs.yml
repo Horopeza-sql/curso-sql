@@ -55,10 +55,10 @@ nav:
   - Inicio: index.md
   - Roadmap del programa: roadmap.md
   - "Fase 1 · SQL":
-    - 0. Introducción: 00-introduccion.md
-    - 1. Básicos: 01-basicos.md
-    - 2. Intermedios: 02-intermedios.md
-    - 3. Avanzados: 03-avanzados.md
-    - 4. Objetos de BD: 04-objetos-bd.md
-    - 5. Administración: 05-administracion.md
-    - 6. Referencia Rápida: 06-referencia-rapida.md
+    - Introducción: 00-introduccion.md
+    - Básicos: 01-basicos.md
+    - Intermedios: 02-intermedios.md
+    - Avanzados: 03-avanzados.md
+    - Objetos de BD: 04-objetos-bd.md
+    - Administración: 05-administracion.md
+    - Referencia Rápida: 06-referencia-rapida.md
