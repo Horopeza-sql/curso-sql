@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Continuidad — Programa de Análisis de Datos desde Cero</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #3f51b5;
+    --primary-dark: #303f9f;
+    --primary-light: #e8eaf6;
+    --accent: #ff4081;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #e0e0e0;
+    --code-bg: #2d2d2d;
+    --code-text: #f8f8f2;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #f44336;
+    --info: #2196f3;
+  }
+  body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(63,81,181,0.2);
+  }
+  header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  header p {
+    opacity: 0.9;
+    font-size: 14px;
+  }
+  .search-box {
+    margin-top: 16px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    outline: none;
+  }
+  .search-box input::placeholder {
+    color: rgba(255,255,255,0.7);
+  }
+  .search-box::before {
+    content: "🔍";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+  }
+  .section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .section:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .section-header {
+    padding: 18px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .section-header:hover {
+    background: var(--primary-light);
+  }
+  .section-header h2 {
+    font-size: 18px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header .arrow {
+    font-size: 12px;
+    color: var(--text-light);
+    transition: transform 0.2s;
+  }
+  .section.open .section-header .arrow {
+    transform: rotate(90deg);
+  }
+  .section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 24px;
+  }
+  .section.open .section-content {
+    max-height: 5000px;
+    padding: 0 24px 24px;
+  }
+  .section-content h3 {
+    font-size: 15px;
+    color: var(--primary-dark);
+    margin: 16px 0 8px;
+  }
+  .section-content h3:first-child {
+    margin-top: 0;
+  }
+  .section-content p {
+    margin-bottom: 12px;
+    color: #555;
+  }
+  .section-content ul, .section-content ol {
+    margin: 8px 0 16px 24px;
+    color: #555;
+  }
+  .section-content li {
+    margin-bottom: 6px;
+  }
+  .section-content strong {
+    color: var(--text);
+  }
+  code {
+    background: #f0f0f0;
+    color: #c0392b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+  }
+  pre {
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge.success { background: #e8f5e9; color: #2e7d32; }
+  .badge.warning { background: #fff3e0; color: #e65100; }
+  .badge.danger { background: #ffebee; color: #c62828; }
+  .badge.info { background: #e3f2fd; color: #1565c0; }
+  .callout {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 12px 0;
+    border-left: 4px solid;
+    font-size: 14px;
+  }
+  .callout.info { background: #e3f2fd; border-color: var(--info); }
+  .callout.warning { background: #fff3e0; border-color: var(--warning); }
+  .callout.danger { background: #ffebee; border-color: var(--danger); }
+  .callout.success { background: #e8f5e9; border-color: var(--success); }
+  .callout strong { display: block; margin-bottom: 4px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  tr:hover {
+    background: #fafafa;
+  }
+  .checklist {
+    list-style: none;
+    margin-left: 0 !important;
+  }
+  .checklist li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    color: var(--primary);
+  }
+  .hidden { display: none; }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-light);
+    font-size: 13px;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    .section-header h2 { font-size: 16px; }
+    .section-content { padding: 0 16px; }
+    .section.open .section-content { padding: 0 16px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>📘 Manual de Continuidad</h1>
+    <p>Programa de Análisis de Datos desde Cero — Fase 1: SQL aplicado al análisis de datos</p>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Buscar en el manual...">
+    </div>
+  </header>
+
+  <!-- 1. QUÉ ES EL PROYECTO -->
+  <div class="section open" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>🎯 1. Qué es el proyecto</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <p><strong>Nombre:</strong> Programa de Análisis de Datos desde Cero</p>
+      <p><strong>Fase actual:</strong> Fase 1 — SQL aplicado al análisis de datos</p>
+      <p><strong>Autor:</strong> Horopeza-sql</p>
+      <p><strong>Objetivo:</strong> Curso online de SQL orientado al análisis de datos, monetizable a futuro.</p>
+      <p><strong>Stack:</strong> MkDocs 1.6.1 + Material 9.7.7 + GitHub Pages</p>
+      <p><strong>Repo:</strong> <code>https://github.com/Horopeza-sql/curso-sql</code></p>
+      <p><strong>Sitio online:</strong> <code>https://horopeza-sql.github.io/curso-sql/</code></p>
+      <p><strong>Carpeta local:</strong> <code>C:\Users\horopeza\Documents\curso-sql</code></p>
+    </div>
+  </div>
+
+  <!-- 2. CÓMO RETOMAR EN UN CHAT NUEVO -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>💬 2. Cómo retomar en un chat nuevo</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Paso 1 — Abrir la terminal</h3>
+      <pre><code>cd C:\Users\horopeza\Documents\curso-sql
+git pull</code></pre>
+
+      <h3>Paso 2 — Copiar el estado actual</h3>
+      <pre><code>notepad PROYECTO\00-ESTADO-ACTUAL.md</code></pre>
+      <p>Copia <strong>todo el contenido</strong> del archivo.</p>
+
+      <h3>Paso 3 — Copiar el último historial</h3>
+      <pre><code>dir PROYECTO\HISTORIAL</code></pre>
+      <p>Abre el último archivo con <code>notepad PROYECTO\HISTORIAL\YYYY-MM-DD-sesionN.md</code> y copia el contenido.</p>
+
+      <h3>Paso 4 — Abrir un chat nuevo</h3>
+      <p>Pega:</p>
+      <ol>
+        <li>El contenido del <code>00-ESTADO-ACTUAL.md</code></li>
+        <li>El contenido del último historial</li>
+        <li>Un mensaje como: <em>"Continuemos con el proyecto. Aquí está el estado actual y el último historial."</em></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 3. QUÉ INFORMACIÓN PEGAR AL INICIO -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>📋 3. Qué información pegar al inicio</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Obligatorio</h3>
+      <ul>
+        <li>✅ Contenido completo de <code>PROYECTO/00-ESTADO-ACTUAL.md</code></li>
+        <li>✅ Contenido del último historial <code>PROYECTO/HISTORIAL/YYYY-MM-DD-sesionN.md</code></li>
+      </ul>
+
+      <h3>Opcional (si hay dudas)</h3>
+      <ul>
+        <li>Contenido de <code>PROYECTO/BLUEPRINT.md</code> (si existe)</li>
+        <li>Contenido de <code>mkdocs.yml</code></li>
+        <li>Captura del estado del sitio online</li>
+      </ul>
+
+      <div class="callout info">
+        <strong>💡 Tip</strong>
+        Si el chat se cortó a mitad de una tarea, incluye también el último mensaje que te dio la IA para retomar exactamente donde quedó.
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. QUÉ PEDIRLE A LA IA -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>🗣️ 4. Qué pedirle a la IA</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Mensaje de apertura</h3>
+      <pre><code>Continuemos con el proyecto "Programa de Análisis de Datos desde Cero".
+
+Aquí está el estado actual:
+[pegar 00-ESTADO-ACTUAL.md]
+
+Aquí está el último historial:
+[pegar último historial]
+
+Por favor:
+1. Confirma que tienes el contexto completo.
+2. Dime cuál es el siguiente paso según el estado actual.
+3. No me des la razón en todo: si algo no te parece, dímelo con argumentos.
+4. Prioriza calidad sobre velocidad.</code></pre>
+
+      <h3>Reglas que la IA debe seguir</h3>
+      <ul>
+        <li>✅ Ser honesta, no decir "sí" a todo.</li>
+        <li>✅ Si algo no le parece, decirlo con argumentos.</li>
+        <li>✅ Si algo se puede mejorar, proponer alternativas.</li>
+        <li>✅ No dar respuestas genéricas.</li>
+        <li>✅ Si no sabe algo, decir "no lo sé".</li>
+        <li>✅ Priorizar calidad sobre cantidad.</li>
+        <li>✅ Recordar los pendientes cuando sea relevante.</li>
+        <li>✅ Avisar ANTES de seguir si detecta un error.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5. COMANDOS ÚTILES -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>⌨️ 5. Comandos útiles</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Git</h3>
+      <pre><code># Ver estado
+git status
+
+# Añadir todo
+git add .
+
+# Commit
+git commit -m "Descripción del cambio"
+
+# Subir a GitHub
+git push
+
+# Bajar cambios
+git pull
+
+# Ver últimos commits
+git log --oneline -5</code></pre>
+
+      <h3>MkDocs</h3>
+      <pre><code># Probar en local (http://127.0.0.1:8000/curso-sql/)
+python -m mkdocs serve
+
+# Publicar online
+python -m mkdocs gh-deploy
+
+# Ver versión
+python -m mkdocs --version</code></pre>
+
+      <div class="callout warning">
+        <strong>⚠️ Importante</strong>
+        Usar <code>python -m mkdocs</code> en lugar de <code>mkdocs</code> porque Python de Microsoft Store no añade scripts al PATH.
+      </div>
+
+      <h3>Editar archivos</h3>
+      <pre><code># Abrir un archivo en el Bloc de notas
+notepad mkdocs.yml
+notepad PROYECTO\00-ESTADO-ACTUAL.md
+notepad docs\01-introduccion\index.md</code></pre>
+    </div>
+  </div>
+
+  <!-- 6. ESTRUCTURA DEL PROYECTO -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>📁 6. Estructura del proyecto</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <pre><code>curso-sql/
+├── mkdocs.yml                       ← Configuración
+├── mkdocs.yml.backup                ← Backup
+├── .gitignore
+├── PROYECTO/                        ← Documentación interna
+│   ├── 00-ESTADO-ACTUAL.md          ← Estado vivo
+│   ├── manual-continuidad.html      ← Este manual
+│   ├── REVISION-EXTERNA.md
+│   └── HISTORIAL/                   ← Historial de sesiones
+└── docs/                            ← Contenido del curso
+    ├── index.md
+    ├── roadmap.md
+    ├── fase-1.md                    ← Página índice Fase 1
+    ├── 01-introduccion/index.md
+    ├── 02-fundamentos-bd/index.md
+    ├── 03-consultas/index.md
+    ├── 04-analisis/index.md
+    ├── 05-relaciones/index.md
+    ├── 06-diseno-objetos/index.md
+    ├── 07-sql-avanzado/index.md
+    ├── 08-calidad/index.md
+    ├── 09-administracion/index.md
+    ├── 10-proyecto/index.md
+    └── 11-referencia/index.md</code></pre>
+    </div>
+  </div>
+
+  <!-- 7. DECISIONES TOMADAS -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>✅ 7. Decisiones tomadas</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Arquitectura</h3>
+      <ul>
+        <li><strong>11 secciones:</strong> Introducción y Entorno, Fundamentos de BD, Consultas Esenciales, Análisis y Agregaciones, Relaciones y Modelado, Diseño y Objetos, SQL Avanzado, Calidad y Trabajo Profesional, Administración Básica, Proyecto Final, Referencia Rápida.</li>
+        <li><strong>2 grupos:</strong> "Programa" y "Fase 1 · SQL".</li>
+        <li><strong>Sin números</strong> en el menú visible.</li>
+      </ul>
+
+      <h3>Contenido</h3>
+      <ul>
+        <li><strong>Plantilla pedagógica de 13 pasos:</strong> Objetivo → Problema → Cuándo → Concepto → Sintaxis → Ejemplo → Errores → Práctica (3 niveles) → Validación → Aplicación → Criterio de éxito → Resumen → Siguiente.</li>
+        <li><strong>Práctica en 3 niveles:</strong> 🟢 Guiada / 🟡 Autónoma / 🔴 Caso de negocio.</li>
+        <li><strong>Proyecto transversal:</strong> Ventas / Facturación / Cobranza.</li>
+        <li><strong>3 entornos de datos:</strong> <code>world</code> → <code>employees</code> → proyecto propio.</li>
+        <li><strong>Regla pedagógica:</strong> "Tratar lo menos posible el código que aún no se ha visto."</li>
+      </ul>
+
+      <h3>Decisiones firmes</h3>
+      <ul>
+        <li>MySQL <strong>8.4 LTS</strong> (no 9.x).</li>
+        <li><strong>Sin cifras de salario</strong> ni afirmaciones de mercado sin fuente.</li>
+        <li><strong>No es un curso de DBA</strong> ni de backend ni ERP.</li>
+        <li><strong>Enlaces externos</strong> en misma pestaña (pendiente revisar).</li>
+        <li><strong>Mermaid</strong> descartado por ahora.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. PENDIENTES -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>⏳ 8. Pendientes</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Inmediatos</h3>
+      <ul>
+        <li>Crear la <strong>Matriz Maestra de Competencias</strong>.</li>
+        <li>Migrar contenido de <code>00-introduccion.md</code> a <code>01-introduccion/</code>.</li>
+        <li>Migrar <code>0.6a</code> a <code>02-preparacion/</code>.</li>
+        <li>Escribir temas pendientes (0.6b a 0.10).</li>
+        <li>Empezar Sección de Consultas SQL.</li>
+      </ul>
+
+      <h3>Para el final de la Fase 1</h3>
+      <ul>
+        <li>Abrir enlaces externos en pestaña nueva.</li>
+        <li>Evaluar Mermaid para diagramas.</li>
+        <li>Página "Índice del curso" con progreso.</li>
+        <li>Widget de progreso en portada.</li>
+        <li>Certificado del curso (evaluar legalidad).</li>
+        <li>Añadir más recursos gratuitos.</li>
+        <li>Revisar calidad de ejemplos y ejercicios.</li>
+        <li>Añadir capturas/imágenes.</li>
+        <li>Verificar navegación móvil.</li>
+      </ul>
+
+      <h3>Archivos antiguos a eliminar (FASE 3)</h3>
+      <ul>
+        <li><code>00-introduccion.md</code> (migrar primero)</li>
+        <li><code>01-basicos.md</code></li>
+        <li><code>02-intermedios.md</code></li>
+        <li><code>03-avanzados.md</code></li>
+        <li><code>04-objetos-bd.md</code></li>
+        <li><code>05-administracion.md</code></li>
+        <li><code>06-referencia-rapida.md</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9. CHECKLIST DE INICIO DE SESIÓN -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>🚀 9. Checklist de inicio de sesión</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <ul class="checklist">
+        <li>Abrir la terminal en <code>C:\Users\horopeza\Documents\curso-sql</code>.</li>
+        <li>Ejecutar <code>git pull</code> (por si se editó desde otra PC).</li>
+        <li>Abrir <code>PROYECTO\00-ESTADO-ACTUAL.md</code> y copiar el contenido.</li>
+        <li>Abrir el último historial en <code>PROYECTO\HISTORIAL\</code> y copiar el contenido.</li>
+        <li>Abrir un chat nuevo con la IA.</li>
+        <li>Pegar el estado + historial + mensaje de apertura.</li>
+        <li>Confirmar que la IA tiene el contexto completo.</li>
+        <li>Preguntar cuál es el siguiente paso.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 10. CHECKLIST DE CIERRE DE SESIÓN -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>🏁 10. Checklist de cierre de sesión</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <ul class="checklist">
+        <li>Actualizar <code>PROYECTO\00-ESTADO-ACTUAL.md</code> con lo hecho hoy.</li>
+        <li>Crear un nuevo archivo en <code>PROYECTO\HISTORIAL\YYYY-MM-DD-sesionN.md</code>.</li>
+        <li>Ejecutar <code>git add .</code></li>
+        <li>Ejecutar <code>git commit -m "Descripción"</code></li>
+        <li>Ejecutar <code>git push</code></li>
+        <li>Ejecutar <code>python -m mkdocs gh-deploy</code></li>
+        <li>Verificar que el sitio online está actualizado.</li>
+      </ul>
+
+      <div class="callout success">
+        <strong>✅ Consejo</strong>
+        Al cerrar la sesión, pídele a la IA un resumen del día para pegarlo en el nuevo historial. Así no pierdes el contexto.
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. ENLACES IMPORTANTES -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>🔗 11. Enlaces importantes</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <h3>Repositorio</h3>
+      <ul>
+        <li><strong>GitHub:</strong> <a href="https://github.com/Horopeza-sql/curso-sql" target="_blank">https://github.com/Horopeza-sql/curso-sql</a></li>
+        <li><strong>Sitio online:</strong> <a href="https://horopeza-sql.github.io/curso-sql/" target="_blank">https://horopeza-sql.github.io/curso-sql/</a></li>
+        <li><strong>Config Pages:</strong> <a href="https://github.com/Horopeza-sql/curso-sql/settings/pages" target="_blank">Settings Pages</a></li>
+        <li><strong>Commits:</strong> <a href="https://github.com/Horopeza-sql/curso-sql/commits/main" target="_blank">Historial de commits</a></li>
+      </ul>
+
+      <h3>Documentación oficial</h3>
+      <ul>
+        <li><strong>MkDocs:</strong> <a href="https://www.mkdocs.org/" target="_blank">https://www.mkdocs.org/</a></li>
+        <li><strong>Material for MkDocs:</strong> <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">https://squidfunk.github.io/mkdocs-material/</a></li>
+        <li><strong>MySQL:</strong> <a href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a></li>
+      </ul>
+
+      <h3>Bases de datos de práctica</h3>
+      <ul>
+        <li><strong>world:</strong> <a href="https://dev.mysql.com/doc/index-other.html" target="_blank">MySQL Documentation</a></li>
+        <li><strong>employees:</strong> <a href="https://github.com/datacharmer/test_db" target="_blank">GitHub datacharmer/test_db</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 12. PLANTILLA DE RESUMEN DE CIERRE -->
+  <div class="section" data-section>
+    <div class="section-header" onclick="toggleSection(this)">
+      <h2>📝 12. Plantilla de resumen de cierre</h2>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="section-content">
+      <p>Al cerrar cada sesión, pega esto en el nuevo historial:</p>
+      <pre><code># Sesión YYYY-MM-DD (sesión N) — [Título]
+
+## ✅ Lo que se hizo
+- 
+- 
+- 
+
+## 🎯 Estado actual
+- 
+
+## 🔜 Próximos pasos
+1. 
+2. 
+3. 
+
+## ⚠️ Problemas encontrados
+- 
+
+## 💡 Decisiones tomadas
+- 
+- </code></pre>
+    </div>
+  </div>
+
+  <footer>
+    <p>Manual de continuidad — Programa de Análisis de Datos desde Cero</p>
+    <p>Última actualización: 2025-10-02</p>
+  </footer>
+
+</div>
+
+<script>
+  function toggleSection(header) {
+    const section = header.parentElement;
+    section.classList.toggle('open');
+  }
+
+  // Abrir primera sección por defecto
+  document.querySelectorAll('[data-section]')[0].classList.add('open');
+
+  // Buscador
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    const sections = document.querySelectorAll('[data-section]');
+
+    sections.forEach(section => {
+      const text = section.textContent.toLowerCase();
+      if (query === '' || text.includes(query)) {
+        section.classList.remove('hidden');
+        if (query !== '') section.classList.add('open');
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+  });
+
+  // Atajo: Ctrl+K para buscar
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+</script>
+
+</body>
+</html>
