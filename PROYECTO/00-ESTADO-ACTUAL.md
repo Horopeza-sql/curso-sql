@@ -1,30 +1,38 @@
 # Estado Actual del Proyecto — Programa de Análisis de Datos desde Cero
 
-**Última actualización:** 2025-10-02 (sesión 5)
+**Última actualización:** 2025-10-02 (sesión 5b)
 
 ## 🎯 Fase actual
-Arquitectura reorganizada. Navegación redefinida. Listo para crear Matriz de Competencias y empezar contenido.
+Migración de contenido completada. Sección "Introducción y Entorno" con 6 temas individuales. Listo para crear Matriz de Competencias.
 
 ## ✅ Completado
 - Todo lo de las sesiones 1-4 (infraestructura, sitio online, temas 0.1-0.5, 0.6a escrito)
-- Reorganización completa de la estructura del proyecto:
-  - **11 secciones nuevas** definidas
-  - **Carpetas creadas:** `01-introduccion/`, `02-fundamentos-bd/`, `03-consultas/`, `04-analisis/`, `05-relaciones/`, `06-diseno-objetos/`, `07-sql-avanzado/`, `08-calidad/`, `09-administracion/`, `10-proyecto/`, `11-referencia/`
-  - **Páginas índice** creadas en cada sección (`index.md`)
-  - **Página índice de Fase 1** creada (`docs/fase-1.md`)
-- `mkdocs.yml` actualizado:
+- **Reorganización completa de la estructura:**
+  - 11 secciones nuevas definidas
+  - 11 carpetas creadas en `docs/`
+  - Páginas índice creadas por sección
+  - Página índice de Fase 1 (`fase-1.md`)
+- **`mkdocs.yml` actualizado:**
   - Título: "Programa de Análisis de Datos desde Cero"
-  - Features: `navigation.instant`, `navigation.tracking`, `navigation.sections`, `navigation.expand`, `navigation.indexes`, `navigation.top`, `navigation.prune`
-  - `toc_depth: 2` (para limitar el TOC a `##`)
-  - Nav reorganizado en 2 grupos: "Programa" y "Fase 1 · SQL"
-- Backup del `mkdocs.yml` original en `mkdocs.yml.backup`
+  - Features: `navigation.sections`, `navigation.expand`, `navigation.indexes`, `navigation.prune`
+  - `toc_depth: 2`
+  - Nav con 2 grupos: "Programa" y "Fase 1 · SQL"
+- **Migración de contenido (tema 0.1 a 0.6a):**
+  - `docs/01-introduccion/que-es-base-de-datos.md`
+  - `docs/01-introduccion/que-es-sql.md`
+  - `docs/01-introduccion/por-que-aprender-sql.md`
+  - `docs/01-introduccion/alcance.md`
+  - `docs/01-introduccion/trabajos.md`
+  - `docs/01-introduccion/instalacion-mysql.md`
+  - `docs/01-introduccion/index.md` actualizado con enlaces
+- **Archivos antiguos eliminados:** `00-introduccion.md`, `01-basicos.md`, `02-intermedios.md`, `03-avanzados.md`, `04-objetos-bd.md`, `05-administracion.md`, `06-referencia-rapida.md`
+- **Sitio online actualizado** con la nueva estructura
 
 ## 🔜 Próximos pasos
 1. **Crear la Matriz Maestra de Competencias** (siguiente paso inmediato)
-2. **Migrar contenido** de `00-introduccion.md` (temas 0.1-0.5) a la nueva estructura (`01-introduccion/`)
-3. **Migrar 0.6a** a `02-preparacion/` (o sección correspondiente)
-4. **Escribir temas pendientes** (0.6b a 0.10)
-5. **Empezar Sección de Consultas SQL**
+2. **Migrar 0.6a** (instalación de MySQL) a sección independiente si se decide
+3. **Escribir temas pendientes** (0.6b a 0.10)
+4. **Empezar Sección de Consultas SQL**
 
 ## 📌 Decisiones importantes tomadas
 - **Arquitectura:** 11 secciones + 2 grupos ("Programa" y "Fase 1 · SQL")
@@ -38,6 +46,8 @@ Arquitectura reorganizada. Navegación redefinida. Listo para crear Matriz de Co
 - **MySQL 8.4 LTS**
 - **Enlaces externos** en misma pestaña (pendiente revisar al final)
 - **Mermaid** descartado por ahora (diagramas ASCII)
+- **Videos:** placeholders `<!-- VIDEO PENDIENTE -->` para buscar y añadir después
+- **Diseño visual y navegación se pueden cambiar después** sin afectar al contenido
 
 ## 📌 Pendientes para el final de la Fase 1
 - **Abrir enlaces externos en pestaña nueva:** evaluar HTML o JS global.
@@ -58,25 +68,27 @@ curso-sql/
 ├── .gitignore
 ├── PROYECTO/
 │   ├── 00-ESTADO-ACTUAL.md
-│   ├── BLUEPRINT.md (pendiente guardar)
+│   ├── manual-continuidad.html
 │   ├── REVISION-EXTERNA.md
 │   └── HISTORIAL/
 │       ├── 2025-09-30.md
 │       ├── 2025-09-30-sesion2.md
 │       ├── 2025-09-30-sesion3.md
-│       └── 2025-09-30-sesion4.md
+│       ├── 2025-09-30-sesion4.md
+│       ├── 2025-10-02-sesion5.md
+│       └── 2025-10-02-sesion5b.md (pendiente crear)
 └── docs/
     ├── index.md
     ├── roadmap.md
     ├── fase-1.md
-    ├── 00-introduccion.md (contenido antiguo, pendiente migrar)
-    ├── 01-basicos.md (antiguo, pendiente eliminar)
-    ├── 02-intermedios.md (antiguo)
-    ├── 03-avanzados.md (antiguo)
-    ├── 04-objetos-bd.md (antiguo)
-    ├── 05-administracion.md (antiguo)
-    ├── 06-referencia-rapida.md (antiguo)
-    ├── 01-introduccion/index.md
+    ├── 01-introduccion/
+    │   ├── index.md
+    │   ├── que-es-base-de-datos.md
+    │   ├── que-es-sql.md
+    │   ├── por-que-aprender-sql.md
+    │   ├── alcance.md
+    │   ├── trabajos.md
+    │   └── instalacion-mysql.md
     ├── 02-fundamentos-bd/index.md
     ├── 03-consultas/index.md
     ├── 04-analisis/index.md
