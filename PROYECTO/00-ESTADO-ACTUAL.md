@@ -1,27 +1,31 @@
 # Estado Actual del Proyecto — Programa de Análisis de Datos desde Cero
 
-**Última actualización:** 2025-10-02 (sesión 5c)
+**Última actualización:** 2025-10-02 (sesión 5d)
 
 ## 🎯 Fase actual
-Matriz Maestra de Competencias creada (borrador inicial). Sección "Introducción y Entorno" con 6 temas migrados. Pendiente: definir temas 0.6b–0.10 y empezar Consultas Esenciales.
+Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Introducción y Entorno están definidos (falta escribirlos). Siguiente gran bloque: definir temas de Consultas Esenciales.
 
 ## ✅ Completado
-- Todo lo de las sesiones 1–4 (infraestructura, sitio online, temas 0.1–0.5, 0.6a escrito)
-- **Sesión 5:** arquitectura de 11 secciones, reorganización de `docs/`, `mkdocs.yml` con 2 grupos ("Programa" y "Fase 1 · SQL")
-- **Sesión 5b:** migración de 0.1–0.6a a archivos individuales en `docs/01-introduccion/`
-- **Sesión 5c (hoy):**
-  - Validación cruzada: detectado y corregido bug de indentación en `features` de `mkdocs.yml` (estaba dentro de `palette`)
-  - `navigation.prune` eliminado (había secciones vacías que conviene ver)
-  - Creada `PROYECTO/matriz-competencias.md` (borrador inicial, con Sección 1 detallada y esqueleto 2–11)
-  - Definido: 0.6a (instalación MySQL) se queda en `01-introduccion/`, no se mueve a sección propia
-  - Definido: reescritura de temas a plantilla de 13 pasos se hará después de cerrar la matriz
+- Todo lo de sesiones 1 a 5c
+- **Sesión 5d (hoy):**
+  - Definidos los temas 0.6b–0.10 (existían de una conversación anterior)
+  - Decidida su ubicación:
+    - 0.6b → `01-introduccion/`
+    - 0.7 y 0.8 → `02-fundamentos-bd/`
+    - 0.9 → `01-introduccion/` (definición del proyecto, NO en Proyecto Final)
+    - 0.10 → `01-introduccion/`
+  - Matriz Maestra reescrita con:
+    - Sección 1 completa (9 temas, 1.1 a 1.9)
+    - Sección 2 completa (2 temas, 2.1 y 2.2)
+    - Columna "código original" para trazabilidad
 
 ## 🔜 Próximos pasos
-1. Definir los temas 0.6b–0.10 (Sección 1) y añadirlos a la matriz
-2. Definir la lista de temas de Sección 3 · Consultas Esenciales
-3. Reescribir 1.1–1.6 con la plantilla de 13 pasos
-4. Empezar a escribir la Sección de Consultas Esenciales
-5. Actualizar `manual-continuidad.html` (sección de pendientes + añadir "cómo pasar archivos a la IA por CMD")
+1. Definir la lista de temas de Sección 3 · Consultas Esenciales
+2. Escribir los temas 0.6b (configuración inicial), 0.9 (proyecto) y 0.10 (cómo usar la guía)
+3. Escribir los temas 0.7 y 0.8 en `02-fundamentos-bd/`
+4. Reescribir 1.1 a 1.6 con la plantilla de 13 pasos
+5. Reescribir `docs/index.md` (sigue obsoleto)
+6. Actualizar `manual-continuidad.html`
 
 ## 📌 Decisiones firmes
 - **Arquitectura:** 11 secciones + 2 grupos
@@ -29,6 +33,7 @@ Matriz Maestra de Competencias creada (borrador inicial). Sección "Introducció
 - **Plantilla pedagógica:** 13 pasos
 - **Práctica en 3 niveles:** 🟢 🟡 🔴
 - **Proyecto transversal:** Ventas / Facturación / Cobranza
+- **Proyecto:** se presenta en Introducción (0.9), se integra en Proyecto Final (sección 10)
 - **Tres entornos:** `world` → `employees` → proyecto propio
 - **MySQL 8.4 LTS**
 - **Sin cifras de salario** ni afirmaciones de mercado sin fuente
@@ -66,11 +71,13 @@ curso-sql/
 │ ├── 2025-09-30-sesion3.md
 │ ├── 2025-09-30-sesion4.md
 │ ├── 2025-10-02-sesion5.md
-│ └── 2025-10-02-sesion5b.md
+│ ├── 2025-10-02-sesion5b.md
+│ └── 2025-10-02-sesion5c.md
 └── docs/
 ├── index.md
 ├── roadmap.md
-├── fase-1.md
+├── fase-1/
+│ └── index.md
 ├── 01-introduccion/
 │ ├── index.md
 │ ├── que-es-base-de-datos.md
@@ -100,3 +107,4 @@ curso-sql/
 - **Salarios:** NO se publican cifras
 - **MySQL:** 8.4 LTS
 - **Matriz de Competencias:** en `PROYECTO/matriz-competencias.md`, uso interno
+- **Al mover archivos `.md`:** revisar enlaces relativos internos (nos pasó con `fase-1.md`)
