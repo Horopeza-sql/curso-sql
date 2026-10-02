@@ -40,7 +40,7 @@ Esta fase te enseña **SQL aplicado al análisis de datos**: desde consultas bá
 
 ## 🚀 ¿Por dónde empezar?
 
-Si es tu primera vez, empieza por **[Introducción y Entorno](01-introduccion/index.md)**.
+Si es tu primera vez, empieza por **[Introducción y Entorno](../01-introduccion/index.md)**.
 
 Si ya tienes experiencia con SQL, puedes saltar directamente a la sección que te interese.
 
