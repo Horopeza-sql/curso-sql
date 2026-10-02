@@ -1,5 +1,5 @@
-site_name: Programa de Análisis de Datos desde Cero
-site_description: "Programa completo de Análisis de Datos. Fase 1: SQL aplicado al análisis de datos."
+site_name: SQL para Análisis de Datos
+site_description: Curso completo de SQL orientado al análisis de datos. Fase 1 del programa de Análisis de Datos desde Cero.
 site_author: Horopeza-sql
 site_url: https://Horopeza-sql.github.io/curso-sql/
 
@@ -21,12 +21,12 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
-      features:
+  features:
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
     - navigation.sections
     - navigation.expand
-    - navigation.indexes
     - navigation.top
     - search.suggest
     - search.highlight
@@ -50,21 +50,15 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      toc_depth: 2
 
 nav:
-  - Programa:
-    - Inicio: index.md
-    - Roadmap del Programa: roadmap.md
+  - Inicio: index.md
+  - Roadmap del programa: roadmap.md
   - "Fase 1 · SQL":
-    - Introducción y Entorno: 01-introduccion/index.md
-    - Fundamentos de BD: 02-fundamentos-bd/index.md
-    - Consultas Esenciales: 03-consultas/index.md
-    - Análisis y Agregaciones: 04-analisis/index.md
-    - Relaciones y Modelado: 05-relaciones/index.md
-    - Diseño y Objetos: 06-diseno-objetos/index.md
-    - SQL Avanzado: 07-sql-avanzado/index.md
-    - Calidad y Trabajo Profesional: 08-calidad/index.md
-    - Administración Básica: 09-administracion/index.md
-    - Proyecto Final: 10-proyecto/index.md
-    - Referencia Rápida: 11-referencia/index.md
+    - Introducción: 00-introduccion.md
+    - Básicos: 01-basicos.md
+    - Intermedios: 02-intermedios.md
+    - Avanzados: 03-avanzados.md
+    - Objetos de BD: 04-objetos-bd.md
+    - Administración: 05-administracion.md
+    - Referencia Rápida: 06-referencia-rapida.md
