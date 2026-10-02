@@ -12,31 +12,31 @@
         <meta name="author" content="Horopeza-sql">
       
       
-        <link rel="canonical" href="https://Horopeza-sql.github.io/curso-sql/05-relaciones/">
+        <link rel="canonical" href="https://Horopeza-sql.github.io/curso-sql/01-introduccion/por-que-aprender-sql/">
       
       
-        <link rel="prev" href="../04-analisis/">
+        <link rel="prev" href="../que-es-sql/">
       
       
-        <link rel="next" href="../06-diseno-objetos/">
+        <link rel="next" href="../alcance/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Relaciones y Modelado - Programa de Análisis de Datos desde Cero</title>
+        <title>¿Por qué aprender SQL? - Programa de Análisis de Datos desde Cero</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#relaciones-y-modelado" class="md-skip">
+        <a href="#por-que-aprender-sql" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="Programa de Análisis de Datos desde Cero" class="md-header__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-header__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Relaciones y Modelado
+              ¿Por qué aprender SQL?
             
           </span>
         </div>
@@ -280,7 +280,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Programa de Análisis de Datos desde Cero" class="md-nav__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-nav__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -345,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -373,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         
   
   
@@ -454,18 +454,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -486,7 +488,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -504,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introduccion/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -532,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introduccion/que-es-base-de-datos/" class="md-nav__link">
+      <a href="../que-es-base-de-datos/" class="md-nav__link">
         
   
   
@@ -560,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introduccion/que-es-sql/" class="md-nav__link">
+      <a href="../que-es-sql/" class="md-nav__link">
         
   
   
@@ -568,210 +570,6 @@
     
   
     ¿Qué es SQL?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/por-que-aprender-sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ¿Por qué aprender SQL?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/alcance/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alcance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/trabajos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Trabajos
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/instalacion-mysql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Instalación de MySQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-fundamentos-bd/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fundamentos de BD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-consultas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Consultas Esenciales
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-analisis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Análisis y Agregaciones
   
 
     
@@ -808,7 +606,7 @@
   <span class="md-ellipsis">
     
   
-    Relaciones y Modelado
+    ¿Por qué aprender SQL?
   
 
     
@@ -830,7 +628,211 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-diseno-objetos/" class="md-nav__link">
+      <a href="../alcance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alcance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trabajos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trabajos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion-mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación de MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentos-bd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de BD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-consultas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consultas Esenciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-analisis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Análisis y Agregaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-relaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relaciones y Modelado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-diseno-objetos/" class="md-nav__link">
         
   
   
@@ -858,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-sql-avanzado/" class="md-nav__link">
+      <a href="../../07-sql-avanzado/" class="md-nav__link">
         
   
   
@@ -886,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-calidad/" class="md-nav__link">
+      <a href="../../08-calidad/" class="md-nav__link">
         
   
   
@@ -914,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-administracion/" class="md-nav__link">
+      <a href="../../09-administracion/" class="md-nav__link">
         
   
   
@@ -942,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-proyecto/" class="md-nav__link">
+      <a href="../../10-proyecto/" class="md-nav__link">
         
   
   
@@ -970,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-referencia/" class="md-nav__link">
+      <a href="../../11-referencia/" class="md-nav__link">
         
   
   
@@ -1033,8 +1035,85 @@
 
 
 
-<h1 id="relaciones-y-modelado">Relaciones y Modelado<a class="headerlink" href="#relaciones-y-modelado" title="Permanent link">&para;</a></h1>
-<p>🚧 Sección en construcción.</p>
+<h1 id="por-que-aprender-sql">¿Por qué aprender SQL?<a class="headerlink" href="#por-que-aprender-sql" title="Permanent link">&para;</a></h1>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💡 ¿Qué es?</label><label for="__tabbed_1_2">🔬 ¿Cómo funciona?</label><label for="__tabbed_1_3">💻 Ejemplo</label><label for="__tabbed_1_4">⚠️ Errores comunes</label><label for="__tabbed_1_5">🎯 Ejercicio</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Aprender SQL <strong>no es solo aprender un lenguaje</strong>. Es aprender a <strong>pensar en datos</strong>.</p>
+<p>Hoy en día, <strong>casi todo</strong> se guarda en bases de datos:
+- Tu cuenta de banco.
+- Tu historial médico.
+- Tus compras online.
+- Tus redes sociales.
+- Los sistemas de tu empresa.</p>
+<p>Saber SQL te permite <strong>entender y controlar</strong> esa información.</p>
+<p>Y para un <strong>analista de datos</strong>, SQL es una de las herramientas fundamentales para trabajar con información almacenada en bases de datos relacionales.</p>
+</div>
+<div class="tabbed-block">
+<p>SQL es una de las habilidades <strong>más demandadas</strong> en tecnología y análisis de datos. Razones:</p>
+<ol>
+<li><strong>Universal:</strong> se usa en todos los sectores (banca, salud, retail, educación, gobierno).</li>
+<li><strong>Atemporal:</strong> lleva 50 años y sigue siendo el estándar. No va a desaparecer.</li>
+<li><strong>Fácil de aprender:</strong> su sintaxis es muy cercana al inglés natural.</li>
+<li><strong>Combina con todo:</strong> data science, business intelligence, desarrollo web, análisis financiero.</li>
+<li><strong>No requiere ser programador:</strong> contadores, analistas, gerentes lo usan a diario.</li>
+</ol>
+<p>En el mundo del <strong>análisis de datos</strong>, SQL es una de las herramientas que más se repite en las ofertas laborales.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Lo que podrás hacer al terminar este curso:</strong></p>
+<p>Imagina que eres analista de datos en una empresa. Tu gerente te pide:</p>
+<blockquote>
+<p>"Necesito saber <strong>cuáles fueron los 10 productos más vendidos en el último trimestre</strong>, con su ingreso total."</p>
+</blockquote>
+<p><strong>Antes de este curso:</strong> no sabrías por dónde empezar.
+<strong>Después de este curso:</strong> podrás obtener una tabla como esta en segundos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Producto               | Unidades vendidas | Ingreso total
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-----------------------|-------------------|---------------
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Aceite de girasol      | 12,450            | $124,500.00
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Harina de trigo        | 10,230            | $71,610.00
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Arroz blanco           | 9,870             | $59,220.00
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Azúcar refinada        | 8,540             | $42,700.00
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Leche en polvo         | 7,320             | $87,840.00
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>...
+</code></pre></div>
+<p><strong>Eso es poder real con datos.</strong> Y lo vas a aprender en este curso.</p>
+<p>No importa si hoy no sabes cómo se hace. <strong>Paso a paso, lo lograrás.</strong></p>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">Pensar que SQL es solo para programadores</p>
+<p>SQL lo usan analistas, contadores, gerentes, marketers, médicos, científicos. Es una habilidad transversal. <strong>Si trabajas con datos, necesitas SQL.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Creer que SQL es cosa del pasado</p>
+<p>SQL nació en 1974 y sigue siendo el estándar. Nuevas herramientas (BigQuery, Snowflake, Databricks, Power BI) usan SQL como base.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Aprender solo la sintaxis sin practicar</p>
+<p>SQL se aprende <strong>haciendo</strong>. Leer sobre SQL no sirve. Hay que escribir consultas, equivocarse, corregir. Por eso este curso tiene ejercicios en cada tema.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Saltarse la teoría para ir al código</p>
+<p>Aunque parezca lento, entender <strong>qué es una base de datos</strong> y <strong>cómo funciona SQL</strong> te ahorrará horas de frustración más adelante. La teoría es la base de la práctica.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Reflexiona y responde en tu cuaderno (o mentalmente):</p>
+<ol>
+<li>¿En qué áreas de tu vida laboral crees que SQL te podría ayudar?</li>
+<li>¿Qué tipo de preguntas te gustaría poder responder con datos?</li>
+<li>¿Qué expectativa tienes de este curso?</li>
+</ol>
+<p>No hay respuesta correcta o incorrecta. Es para que <strong>tengas claro tu objetivo</strong>. Eso te ayudará a mantenerte motivado.</p>
+<details class="success">
+<summary>Reflexión</summary>
+<p>Escribir tus objetivos <strong>te ayuda a mantenerte enfocado</strong>. Cuando llegues a temas difíciles (Window Functions, CTEs), recordar <strong>por qué</strong> estás aprendiendo SQL te dará fuerzas para seguir.</p>
+<p>Mi recomendación: <strong>escribe tus 3 respuestas en un lugar visible</strong>. Vuelve a ellas cada vez que te sientas perdido.</p>
+</details>
+</div>
+</div>
+</div>
 
 
 
@@ -1084,10 +1163,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

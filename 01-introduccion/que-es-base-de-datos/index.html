@@ -12,31 +12,31 @@
         <meta name="author" content="Horopeza-sql">
       
       
-        <link rel="canonical" href="https://Horopeza-sql.github.io/curso-sql/05-relaciones/">
+        <link rel="canonical" href="https://Horopeza-sql.github.io/curso-sql/01-introduccion/que-es-base-de-datos/">
       
       
-        <link rel="prev" href="../04-analisis/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../06-diseno-objetos/">
+        <link rel="next" href="../que-es-sql/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Relaciones y Modelado - Programa de Análisis de Datos desde Cero</title>
+        <title>¿Qué es una base de datos? - Programa de Análisis de Datos desde Cero</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#relaciones-y-modelado" class="md-skip">
+        <a href="#que-es-una-base-de-datos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="Programa de Análisis de Datos desde Cero" class="md-header__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-header__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Relaciones y Modelado
+              ¿Qué es una base de datos?
             
           </span>
         </div>
@@ -280,7 +280,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Programa de Análisis de Datos desde Cero" class="md-nav__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-nav__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -345,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -373,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         
   
   
@@ -454,18 +454,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -486,7 +488,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -504,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introduccion/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -512,266 +514,6 @@
     
   
     Introducción y Entorno
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/que-es-base-de-datos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ¿Qué es una base de datos?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/que-es-sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ¿Qué es SQL?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/por-que-aprender-sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ¿Por qué aprender SQL?
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/alcance/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alcance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/trabajos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Trabajos
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-introduccion/instalacion-mysql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Instalación de MySQL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-fundamentos-bd/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fundamentos de BD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-consultas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Consultas Esenciales
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-analisis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Análisis y Agregaciones
   
 
     
@@ -808,7 +550,7 @@
   <span class="md-ellipsis">
     
   
-    Relaciones y Modelado
+    ¿Qué es una base de datos?
   
 
     
@@ -830,7 +572,267 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-diseno-objetos/" class="md-nav__link">
+      <a href="../que-es-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es SQL?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../por-que-aprender-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Por qué aprender SQL?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alcance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alcance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trabajos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trabajos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion-mysql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación de MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentos-bd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de BD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-consultas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consultas Esenciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-analisis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Análisis y Agregaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-relaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relaciones y Modelado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-diseno-objetos/" class="md-nav__link">
         
   
   
@@ -858,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-sql-avanzado/" class="md-nav__link">
+      <a href="../../07-sql-avanzado/" class="md-nav__link">
         
   
   
@@ -886,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-calidad/" class="md-nav__link">
+      <a href="../../08-calidad/" class="md-nav__link">
         
   
   
@@ -914,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-administracion/" class="md-nav__link">
+      <a href="../../09-administracion/" class="md-nav__link">
         
   
   
@@ -942,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-proyecto/" class="md-nav__link">
+      <a href="../../10-proyecto/" class="md-nav__link">
         
   
   
@@ -970,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-referencia/" class="md-nav__link">
+      <a href="../../11-referencia/" class="md-nav__link">
         
   
   
@@ -1033,8 +1035,105 @@
 
 
 
-<h1 id="relaciones-y-modelado">Relaciones y Modelado<a class="headerlink" href="#relaciones-y-modelado" title="Permanent link">&para;</a></h1>
-<p>🚧 Sección en construcción.</p>
+<h1 id="que-es-una-base-de-datos">¿Qué es una base de datos?<a class="headerlink" href="#que-es-una-base-de-datos" title="Permanent link">&para;</a></h1>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💡 ¿Qué es?</label><label for="__tabbed_1_2">🔬 ¿Cómo funciona?</label><label for="__tabbed_1_3">💻 Ejemplo</label><label for="__tabbed_1_4">⚠️ Errores comunes</label><label for="__tabbed_1_5">🎯 Ejercicio</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Una <strong>base de datos</strong> es un lugar donde guardamos información de forma <strong>organizada</strong> para poder encontrarla, actualizarla y relacionarla fácilmente.</p>
+<p>Piensa en una <strong>agenda de contactos</strong>. Tienes nombres, teléfonos, correos. Si buscas "Juan", lo encuentras rápido porque están ordenados. Eso, llevado a un sistema informático, es una base de datos.</p>
+<p>Ejemplos cotidianos:
+- 📱 Los contactos de tu teléfono.
+- 🏦 Los movimientos de tu cuenta bancaria.
+- 🛒 Los productos de una tienda online.
+- 📊 Los KPIs de una empresa (ventas, clientes, márgenes).</p>
+<p>Como <strong>analista de datos</strong>, tu trabajo consistirá en <strong>hacer preguntas</strong> a esas bases de datos y obtener respuestas útiles para el negocio.</p>
+<!-- VIDEO PENDIENTE: buscar video en YouTube sobre "¿Qué es una base de datos?" -->
+</div>
+<div class="tabbed-block">
+<p>Técnicamente, una base de datos es un <strong>conjunto de datos almacenados sistemáticamente</strong> en un soporte informático, diseñado para:</p>
+<ol>
+<li><strong>Almacenar</strong> información de forma persistente (no se pierde al apagar el equipo).</li>
+<li><strong>Organizar</strong> los datos en estructuras (tablas, columnas, filas).</li>
+<li><strong>Relacionar</strong> datos entre sí (un cliente tiene facturas, una factura tiene productos).</li>
+<li><strong>Consultar</strong> los datos de forma rápida y eficiente.</li>
+<li><strong>Garantizar</strong> la integridad y consistencia (que no haya datos contradictorios).</li>
+</ol>
+<p>Una base de datos <strong>no es un archivo de Excel</strong>. La diferencia clave:
+- Excel: piensa en <strong>celdas</strong>.
+- Base de datos: piensa en <strong>relaciones entre tablas</strong>.</p>
+<p>Y aquí está el punto clave para un <strong>analista de datos</strong>: una base de datos bien diseñada te permite <strong>cruzar información</strong> para descubrir patrones que en Excel serían imposibles.</p>
+</div>
+<div class="tabbed-block">
+<p>Imagina la base de datos <code>world</code> que usaremos en el curso. Tiene tres tablas principales:</p>
+<p><strong>Tabla <code>country</code></strong> (países):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Code  | Name         | Continent      | Population
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>------|--------------|----------------|------------
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ESP   | Spain        | Europe         | 39441700
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>VEN   | Venezuela    | South America  | 28562000
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>JPN   | Japan        | Asia           | 126714000
+</code></pre></div></p>
+<p><strong>Tabla <code>city</code></strong> (ciudades):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ID    | Name         | CountryCode | Population
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>------|--------------|-------------|------------
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>1     | Caracas      | VEN         | 2500000
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>2     | Madrid       | ESP         | 3100000
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>3     | Tokio        | JPN         | 8200000
+</code></pre></div></p>
+<p><strong>Tabla <code>countrylanguage</code></strong> (idiomas por país):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CountryCode | Language   | IsOfficial | Percentage
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>------------|------------|------------|------------
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>VEN         | Spanish    | T          | 96.7
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ESP         | Spanish    | T          | 99.9
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>JPN         | Japanese   | T          | 99.9
+</code></pre></div></p>
+<p>Fíjate en algo importante: <strong>las tablas están relacionadas</strong>. La tabla <code>city</code> tiene una columna <code>CountryCode</code> que conecta con <code>country</code>. Eso es lo que hace <strong>relacional</strong> a una base de datos.</p>
+<p>Como analista, podrías preguntar:</p>
+<blockquote>
+<p>"¿Qué ciudades de Sudamérica tienen más de 1 millón de habitantes?"</p>
+</blockquote>
+<p>Y obtener una respuesta como:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Name      | CountryCode | Population
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>----------|-------------|------------
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Caracas   | VEN         | 2500000
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Bogotá    | COL         | 6268000
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Lima      | PER         | 6464000
+</code></pre></div>
+<p><strong>Fíjate que solo vemos el resultado, no cómo se obtiene.</strong> Eso es el poder de las bases de datos: haces la pregunta y obtienes la respuesta.</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title">Confundir base de datos con tabla</p>
+<p>Una <strong>base de datos</strong> es el conjunto completo. Una <strong>tabla</strong> es una parte dentro de ella. Es como confundir una biblioteca con un estante.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Pensar que una BD es un Excel</p>
+<p>Excel es una hoja de cálculo. Una base de datos es un sistema con <strong>relaciones</strong>, <strong>integridad</strong> y <strong>consultas optimizadas</strong>. No son lo mismo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Creer que una BD es solo para programadores</p>
+<p>Las bases de datos las usan analistas, contadores, gerentes, médicos, científicos... Cualquier persona que trabaje con datos. <strong>Tú, como analista, es tu herramienta principal.</strong></p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Piensa en <strong>3 ejemplos de bases de datos</strong> que uses en tu día a día (apps, webs, sistemas).</p>
+<p>Y responde:
+- ¿Qué tipo de preguntas le harías a cada una?
+- ¿Qué información podrías extraer para tomar decisiones?</p>
+<details class="success">
+<summary>Ver posible respuesta</summary>
+<ul>
+<li>🎵 <strong>Spotify:</strong> canciones, artistas, álbumes, playlists.
+  <em>Preguntas:</em> ¿Cuáles son mis artistas más escuchados del mes? ¿Qué género escucho más?</li>
+<li>📚 <strong>Amazon:</strong> productos, clientes, pedidos, reseñas.
+  <em>Preguntas:</em> ¿Qué productos se venden más? ¿Qué clientes compran más seguido?</li>
+<li>🏦 <strong>Tu banco:</strong> cuentas, movimientos, clientes, sucursales.
+  <em>Preguntas:</em> ¿En qué categorías gasto más? ¿Cuál es mi promedio de gasto mensual?</li>
+</ul>
+<p>Cada uno guarda millones de registros relacionados entre sí. <strong>El analista convierte esos datos en decisiones.</strong></p>
+</details>
+</div>
+</div>
+</div>
 
 
 
@@ -1084,10 +1183,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

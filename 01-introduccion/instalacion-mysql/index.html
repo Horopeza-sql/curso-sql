@@ -1,0 +1,1412 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Programa completo de Análisis de Datos. Fase 1: SQL aplicado al análisis de datos.">
+      
+      
+        <meta name="author" content="Horopeza-sql">
+      
+      
+        <link rel="canonical" href="https://Horopeza-sql.github.io/curso-sql/01-introduccion/instalacion-mysql/">
+      
+      
+        <link rel="prev" href="../trabajos/">
+      
+      
+        <link rel="next" href="../../02-fundamentos-bd/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Instalación de MySQL - Programa de Análisis de Datos desde Cero</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalacion-de-mysql-84-lts" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-header__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programa de Análisis de Datos desde Cero
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalación de MySQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_3">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_4">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_5">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_6">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_7">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_8">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_9">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_10">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_11">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programa de Análisis de Datos desde Cero" class="md-nav__button md-logo" aria-label="Programa de Análisis de Datos desde Cero" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programa de Análisis de Datos desde Cero
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programa
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programa
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap del Programa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fase 1 · SQL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fase 1 · SQL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción y Entorno
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introducción y Entorno
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción y Entorno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../que-es-base-de-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es una base de datos?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../que-es-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es SQL?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../por-que-aprender-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Por qué aprender SQL?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alcance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alcance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trabajos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trabajos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación de MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentos-bd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de BD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-consultas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consultas Esenciales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-analisis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Análisis y Agregaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-relaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relaciones y Modelado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-diseno-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diseño y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-sql-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL Avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calidad y Trabajo Profesional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-administracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administración Básica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-proyecto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-referencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia Rápida
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="instalacion-de-mysql-84-lts">Instalación de MySQL 8.4 LTS<a class="headerlink" href="#instalacion-de-mysql-84-lts" title="Permanent link">&para;</a></h1>
+<p>Antes de empezar a consultar datos, necesitas tener MySQL instalado en tu equipo. En este tema lo instalamos <strong>paso a paso</strong>, según tu sistema operativo.</p>
+<div class="admonition info">
+<p class="admonition-title">📌 Nota</p>
+<p>Aquí verás algunos comandos técnicos. No te preocupes si no entiendes la sintaxis aún — la verás en detalle a partir de la sección de <strong>Consultas Esenciales</strong>. Por ahora solo necesitas <strong>ejecutarlos</strong> para verificar que todo funciona.</p>
+</div>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💡 ¿Qué es MySQL?</label><label for="__tabbed_1_2">🪟 Instalación en Windows</label><label for="__tabbed_1_3">🍎 Instalación en macOS</label><label for="__tabbed_1_4">🐧 Instalación en Linux</label><label for="__tabbed_1_5">🔧 Verificar instalación</label><label for="__tabbed_1_6">⚠️ Errores comunes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>MySQL</strong> es un <strong>motor de bases de datos relacionales</strong>. Es el software que almacena los datos, los organiza en tablas y responde a las consultas que le hagamos con SQL.</p>
+<p>Piensa en MySQL como el <strong>motor de un coche</strong>. Tú no ves el motor, pero sin él el coche no se mueve. Con MySQL pasa lo mismo: tú escribes SQL, y MySQL se encarga de buscar, ordenar y devolver los datos.</p>
+<h3 id="por-que-mysql-en-este-curso">¿Por qué MySQL en este curso?<a class="headerlink" href="#por-que-mysql-en-este-curso" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Gratuito y open source.</strong> No pagas licencia.</li>
+<li>✅ <strong>El más usado del mundo</strong> en proyectos web y análisis de datos.</li>
+<li>✅ <strong>Fácil de instalar</strong> en Windows, macOS y Linux.</li>
+<li>✅ <strong>Compatible con casi todas las herramientas</strong> de análisis (Python, Power BI, Tableau, etc.).</li>
+<li>✅ <strong>Documentación abundante</strong> y comunidad enorme.</li>
+</ul>
+<h3 id="y-las-alternativas">¿Y las alternativas?<a class="headerlink" href="#y-las-alternativas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Motor</th>
+<th>Uso principal</th>
+<th>¿Por qué no en este curso?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MySQL</strong></td>
+<td>Web, análisis, aplicaciones</td>
+<td>✅ Es el elegido</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Análisis avanzado, GIS</td>
+<td>Más complejo para empezar</td>
+</tr>
+<tr>
+<td><strong>SQL Server</strong></td>
+<td>Empresas (Microsoft)</td>
+<td>De pago, atado a Windows</td>
+</tr>
+<tr>
+<td><strong>SQLite</strong></td>
+<td>Apps móviles, prototipos</td>
+<td>Sin servidor, limitado</td>
+</tr>
+<tr>
+<td><strong>Oracle</strong></td>
+<td>Banca, grandes empresas</td>
+<td>Caro, complejo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MySQL es el mejor punto de partida.</strong> Una vez lo domines, migrar a otro motor es cuestión de días.</p>
+<h3 id="version-mysql-84-lts">Versión: MySQL 8.4 LTS<a class="headerlink" href="#version-mysql-84-lts" title="Permanent link">&para;</a></h3>
+<p>Vamos a usar <strong>MySQL 8.4 LTS</strong> (Long-Term Support).</p>
+<ul>
+<li><strong>LTS</strong> significa <strong>soporte a largo plazo</strong>: recibirá actualizaciones de seguridad hasta <strong>2032</strong>.</li>
+<li>Es la versión <strong>recomendada para producción</strong> y para aprender.</li>
+<li>La versión 9.x (Innovation) cambia cada pocos meses y <strong>puede romper compatibilidad</strong>. No la usaremos.</li>
+</ul>
+<h3 id="componentes-que-instalaremos">Componentes que instalaremos<a class="headerlink" href="#componentes-que-instalaremos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MySQL Server</strong> → el motor (obligatorio).</li>
+<li><strong>MySQL Workbench</strong> → interfaz gráfica para gestionar la BD (recomendado).</li>
+<li><strong>MySQL Shell</strong> → terminal avanzada (opcional).</li>
+</ul>
+<p>Con <strong>Server + Workbench</strong> tienes todo lo necesario para el curso.</p>
+</div>
+<div class="tabbed-block">
+<h3 id="paso-1-descargar-el-instalador">Paso 1 — Descargar el instalador<a class="headerlink" href="#paso-1-descargar-el-instalador" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ve a: <a href="https://dev.mysql.com/downloads/installer/">https://dev.mysql.com/downloads/installer/</a></li>
+<li>Descarga <strong>MySQL Installer for Windows</strong> (versión <strong>8.4 LTS</strong>, archivo <code>mysql-installer-community-8.4.x.msi</code>).</li>
+<li>Tamaño: ~450 MB. Elige la opción <strong>"Windows (x86, 32-bit), MSI Installer"</strong> o <strong>"Windows (x86, 64-bit)"</strong> según tu sistema.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">💡 ¿32 o 64 bits?</p>
+<p>Casi todos los PCs modernos son <strong>64 bits</strong>. Si tienes dudas, pulsa <code>Windows + Pausa</code> y mira "Tipo de sistema".</p>
+</div>
+<h3 id="paso-2-ejecutar-el-instalador">Paso 2 — Ejecutar el instalador<a class="headerlink" href="#paso-2-ejecutar-el-instalador" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Doble clic en el archivo <code>.msi</code> descargado.</li>
+<li>Si Windows pide permisos de administrador, acepta.</li>
+<li>En la pantalla <strong>"Choosing a Setup Type"</strong>, selecciona:</li>
+<li>✅ <strong>Developer Default</strong> (instala Server + Workbench + Shell + connectors).</li>
+<li>Clic en <strong>Next</strong>.</li>
+</ol>
+<h3 id="paso-3-instalar-dependencias">Paso 3 — Instalar dependencias<a class="headerlink" href="#paso-3-instalar-dependencias" title="Permanent link">&para;</a></h3>
+<p>El instalador puede pedir instalar <strong>Visual C++ Redistributable</strong> y <strong>Python</strong>. Acepta todo lo que pida.</p>
+<h3 id="paso-4-configurar-mysql-server">Paso 4 — Configurar MySQL Server<a class="headerlink" href="#paso-4-configurar-mysql-server" title="Permanent link">&para;</a></h3>
+<ol>
+<li>En <strong>"Type and Networking"</strong>:</li>
+<li><strong>Config Type:</strong> Development Computer.</li>
+<li><strong>Port:</strong> <code>3306</code> (el estándar).</li>
+<li><strong>X Protocol Port:</strong> <code>33060</code> (déjalo como está).</li>
+<li>En <strong>"Authentication Method"</strong>:</li>
+<li>✅ Selecciona <strong>"Use Strong Password Encryption"</strong> (recomendado).</li>
+<li>En <strong>"Accounts and Roles"</strong>:</li>
+<li><strong>Root Password:</strong> elige una contraseña <strong>segura</strong> (mínimo 8 caracteres, mayúscula, minúscula, número y símbolo).</li>
+<li><strong>⚠️ Anótala en un lugar seguro.</strong> La necesitarás más adelante.</li>
+<li>En <strong>"Windows Service"</strong>:</li>
+<li>✅ <strong>Configure MySQL Server as a Windows Service.</strong></li>
+<li>✅ <strong>Start the MySQL Server at System Startup.</strong></li>
+<li><strong>Service Name:</strong> <code>MySQL84</code> (déjalo por defecto).</li>
+<li>Clic en <strong>Next</strong> → <strong>Execute</strong> → espera a que termine.</li>
+</ol>
+<h3 id="paso-5-finalizar">Paso 5 — Finalizar<a class="headerlink" href="#paso-5-finalizar" title="Permanent link">&para;</a></h3>
+<ol>
+<li>El instalador aplicará la configuración.</li>
+<li>Clic en <strong>Finish</strong>.</li>
+<li>Se abrirá <strong>MySQL Workbench</strong> automáticamente. Ciérralo por ahora (lo usaremos después).</li>
+</ol>
+<h3 id="paso-6-verificar-que-el-servicio-esta-corriendo">Paso 6 — Verificar que el servicio está corriendo<a class="headerlink" href="#paso-6-verificar-que-el-servicio-esta-corriendo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Pulsa <code>Windows + R</code>, escribe <code>services.msc</code> y Enter.</li>
+<li>Busca <strong>"MySQL84"</strong> en la lista.</li>
+<li>Debe estar <strong>"Running"</strong> (En ejecución).</li>
+</ol>
+<p>✅ <strong>MySQL Server está instalado y funcionando.</strong></p>
+<!-- VIDEO PENDIENTE: buscar video en YouTube sobre "Instalación de MySQL en Windows" -->
+</div>
+<div class="tabbed-block">
+<h3 id="opcion-a-homebrew-recomendado">Opción A — Homebrew (recomendado)<a class="headerlink" href="#opcion-a-homebrew-recomendado" title="Permanent link">&para;</a></h3>
+<p><strong>Requisito previo:</strong> tener <strong>Homebrew</strong> instalado. Si no lo tienes, abre Terminal y ejecuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
+<p><strong>Instalar MySQL 8.4:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>mysql@8.4
+</code></pre></div>
+<p><strong>Iniciar el servicio:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>brew<span class="w"> </span>services<span class="w"> </span>start<span class="w"> </span>mysql@8.4
+</code></pre></div>
+<p><strong>Asegurar la instalación:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mysql_secure_installation
+</code></pre></div>
+<p>Te pedirá:
+- Establecer contraseña de root (elige una <strong>segura</strong> y anótala).
+- Eliminar usuarios anónimos (Sí).
+- Deshabilitar login remoto de root (Sí).
+- Eliminar base de datos de prueba (Sí).
+- Recargar privilegios (Sí).</p>
+<h3 id="opcion-b-dmg-oficial">Opción B — DMG oficial<a class="headerlink" href="#opcion-b-dmg-oficial" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ve a: <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></li>
+<li>Descarga el <strong>DMG</strong> para macOS (versión <strong>8.4 LTS</strong>).</li>
+<li>Abre el DMG y ejecuta el instalador <code>.pkg</code>.</li>
+<li>Sigue los pasos (contraseña root, configuración, etc.).</li>
+<li>Al final, el instalador te dará una <strong>contraseña temporal</strong> de root. <strong>Anótala</strong> y cámbiala después.</li>
+</ol>
+<h3 id="instalar-mysql-workbench">Instalar MySQL Workbench<a class="headerlink" href="#instalar-mysql-workbench" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ve a: <a href="https://dev.mysql.com/downloads/workbench/">https://dev.mysql.com/downloads/workbench/</a></li>
+<li>Descarga el DMG para macOS.</li>
+<li>Arrastra MySQL Workbench a la carpeta <strong>Aplicaciones</strong>.</li>
+</ol>
+<p>✅ <strong>MySQL Server + Workbench instalados.</strong></p>
+<!-- VIDEO PENDIENTE: buscar video en YouTube sobre "Instalación de MySQL en macOS" -->
+</div>
+<div class="tabbed-block">
+<h3 id="ubuntu-debian">Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permanent link">&para;</a></h3>
+<p><strong>Paso 1 — Actualizar repositorios:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<p><strong>Paso 2 — Instalar MySQL Server:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server
+</code></pre></div>
+<p><strong>Paso 3 — Iniciar el servicio:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mysql
+</code></pre></div>
+<p><strong>Paso 4 — Asegurar la instalación:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>mysql_secure_installation
+</code></pre></div>
+<p>Te pedirá:
+- Configurar validación de contraseñas (elige "Y" y nivel 1 o 2).
+- Establecer contraseña de root (elige una <strong>segura</strong> y anótala).
+- Eliminar usuarios anónimos (Sí).
+- Deshabilitar login remoto de root (Sí).
+- Eliminar base de datos de prueba (Sí).
+- Recargar privilegios (Sí).</p>
+<h3 id="fedora-rhel-centos">Fedora / RHEL / CentOS<a class="headerlink" href="#fedora-rhel-centos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>mysql-server
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysqld
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mysqld
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>sudo<span class="w"> </span>mysql_secure_installation
+</code></pre></div>
+<h3 id="instalar-mysql-workbench-opcional">Instalar MySQL Workbench (opcional)<a class="headerlink" href="#instalar-mysql-workbench-opcional" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-workbench
+</code></pre></div>
+<p>En Fedora:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>mysql-workbench
+</code></pre></div>
+<p>✅ <strong>MySQL Server instalado.</strong></p>
+<!-- VIDEO PENDIENTE: buscar video en YouTube sobre "Instalación de MySQL en Linux" -->
+</div>
+<div class="tabbed-block">
+<h3 id="1-verificar-que-mysql-esta-instalado">1. Verificar que MySQL está instalado<a class="headerlink" href="#1-verificar-que-mysql-esta-instalado" title="Permanent link">&para;</a></h3>
+<p>Abre una terminal (CMD en Windows, Terminal en macOS/Linux) y ejecuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mysql<span class="w"> </span>--version
+</code></pre></div>
+<p>Deberías ver algo como:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mysql  Ver 8.4.x for Win64 on x86_64 (MySQL Community Server - GPL)
+</code></pre></div>
+<p>✅ Si ves la versión 8.4.x → <strong>MySQL está instalado.</strong></p>
+<h3 id="2-conectar-al-servidor">2. Conectar al servidor<a class="headerlink" href="#2-conectar-al-servidor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
+</code></pre></div>
+<p>Te pedirá la <strong>contraseña de root</strong> (la que pusiste durante la instalación).</p>
+<p>Si todo va bien, verás el prompt de MySQL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mysql&gt;
+</code></pre></div>
+<h3 id="3-confirmar-la-version-dentro-de-mysql">3. Confirmar la versión dentro de MySQL<a class="headerlink" href="#3-confirmar-la-version-dentro-de-mysql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">VERSION</span><span class="p">();</span>
+</code></pre></div>
+<p>Resultado esperado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>+-----------+
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>| VERSION() |
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>+-----------+
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>| 8.4.x     |
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>+-----------+
+</code></pre></div>
+<h3 id="4-salir-de-mysql">4. Salir de MySQL<a class="headerlink" href="#4-salir-de-mysql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">EXIT</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="5-abrir-mysql-workbench">5. Abrir MySQL Workbench<a class="headerlink" href="#5-abrir-mysql-workbench" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abre <strong>MySQL Workbench</strong> desde el menú de aplicaciones.</li>
+<li>Verás una pantalla con <strong>"MySQL Connections"</strong>.</li>
+<li>Haz clic en <strong>"+"</strong> para crear una nueva conexión.</li>
+<li>Rellena:</li>
+<li><strong>Connection Name:</strong> <code>Local - MySQL 8.4</code></li>
+<li><strong>Hostname:</strong> <code>127.0.0.1</code></li>
+<li><strong>Port:</strong> <code>3306</code></li>
+<li><strong>Username:</strong> <code>root</code></li>
+<li>Clic en <strong>"Test Connection"</strong> → te pedirá la contraseña → guarda la contraseña.</li>
+<li>Si dice <strong>"Successfully made the MySQL connection"</strong> → ✅ <strong>todo funciona.</strong></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">📌 Nota</p>
+<p>Estos comandos son solo para verificar que MySQL está funcionando. 
+No te preocupes si no entiendes la sintaxis SQL aún — la verás en detalle 
+a partir de la sección de <strong>Consultas Esenciales</strong>.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title"><code>mysql</code> no se reconoce como comando</p>
+<p><strong>Causa:</strong> MySQL no está en el PATH de Windows.</p>
+<p><strong>Solución:</strong>
+1. Busca "Variables de entorno" en el menú Inicio.
+2. En "Variables del sistema", busca <code>Path</code> → Editar → Nuevo.
+3. Añade: <code>C:\Program Files\MySQL\MySQL Server 8.4\bin</code>
+4. Acepta y <strong>cierra la terminal</strong>. Abre una nueva.
+5. Prueba <code>mysql --version</code> de nuevo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Access denied for user 'root'@'localhost'</p>
+<p><strong>Causa:</strong> contraseña incorrecta u olvidada.</p>
+<p><strong>Solución (Windows):</strong>
+1. Detén el servicio MySQL desde <code>services.msc</code>.
+2. Abre CMD como administrador y ejecuta:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mysqld<span class="w"> </span>--skip-grant-tables
+</code></pre></div>
+3. En otra terminal: <code>mysql -u root</code>
+4. Ejecuta:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">'root'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">'NuevaPasswordSegura'</span><span class="p">;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span>
+</code></pre></div>
+5. Cierra todo, reinicia el servicio desde <code>services.msc</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Port 3306 already in use</p>
+<p><strong>Causa:</strong> otro programa está usando el puerto 3306 (otro MySQL, MariaDB, etc.).</p>
+<p><strong>Solución:</strong>
+1. Abre CMD como admin:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>netstat<span class="w"> </span>-ano<span class="w"> </span><span class="p">|</span><span class="w"> </span>findstr<span class="w"> </span>:3306
+</code></pre></div>
+2. Verás el PID del proceso que lo usa.
+3. Mátalo:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>taskkill<span class="w"> </span>/PID<span class="w"> </span>&lt;numero_pid&gt;<span class="w"> </span>/F
+</code></pre></div>
+4. Reinicia el servicio MySQL.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">El servicio MySQL no inicia</p>
+<p><strong>Causas posibles:</strong>
+- Falta de permisos.
+- Archivos corruptos de la instalación.
+- Antivirus bloqueando.</p>
+<p><strong>Solución:</strong>
+1. Abre <code>services.msc</code>, busca <code>MySQL84</code>, clic derecho → <strong>Reiniciar</strong>.
+2. Si falla, revisa el log de errores en:
+   <code>C:\ProgramData\MySQL\MySQL Server 8.4\Data\*.err</code>
+3. Como último recurso, <strong>reinstala MySQL</strong> desde el instalador.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">No puedo instalar Workbench en Linux</p>
+<p><strong>Causa:</strong> Workbench no siempre está en los repositorios.</p>
+<p><strong>Solución:</strong>
+- Descarga el <code>.deb</code> oficial desde:
+  <a href="https://dev.mysql.com/downloads/workbench/">https://dev.mysql.com/downloads/workbench/</a>
+- O usa <strong>DBeaver</strong> como alternativa (gratis, compatible con MySQL).</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">💡 Consejo antes de seguir</p>
+<p>Si llegaste hasta aquí y <code>mysql --version</code> te devuelve la versión 8.4, <strong>ya tienes MySQL instalado y funcionando.</strong> 🎉</p>
+<p>En el siguiente tema vamos a <strong>configurarlo para el curso</strong>: crear un usuario dedicado, crear la base de datos del proyecto y cargar los datos de práctica (<code>world</code> y <code>employees</code>).</p>
+<p><strong>No avances hasta que MySQL funcione.</strong> Si tienes problemas, revisa los errores comunes o pide ayuda.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
