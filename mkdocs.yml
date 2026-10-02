@@ -57,7 +57,14 @@ nav:
     - Inicio: index.md
     - Roadmap del Programa: roadmap.md
   - "Fase 1 · SQL":
-    - Introducción y Entorno: 01-introduccion/index.md
+    - Introducción y Entorno:
+      - 01-introduccion/index.md
+      - ¿Qué es una base de datos?: 01-introduccion/que-es-base-de-datos.md
+      - ¿Qué es SQL?: 01-introduccion/que-es-sql.md
+      - ¿Por qué aprender SQL?: 01-introduccion/por-que-aprender-sql.md
+      - Alcance: 01-introduccion/alcance.md
+      - Trabajos: 01-introduccion/trabajos.md
+      - Instalación de MySQL: 01-introduccion/instalacion-mysql.md
     - Fundamentos de BD: 02-fundamentos-bd/index.md
     - Consultas Esenciales: 03-consultas/index.md
     - Análisis y Agregaciones: 04-analisis/index.md
