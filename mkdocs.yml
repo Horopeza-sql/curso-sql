@@ -21,7 +21,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
-      features:
+  features:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
@@ -57,7 +57,7 @@ nav:
     - Inicio: index.md
     - Roadmap del Programa: roadmap.md
   - "Fase 1 · SQL":
-    - fase-1.md
+    - fase-1/index.md
     - Introducción y Entorno:
       - 01-introduccion/index.md
       - ¿Qué es una base de datos?: 01-introduccion/que-es-base-de-datos.md
