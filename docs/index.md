@@ -1,23 +1,14 @@
-# SQL para Análisis de Datos
+# Programa de Análisis de Datos desde Cero
 
-Bienvenido al **Curso SQL para Análisis de Datos**, la **Fase 1** del programa **Análisis de Datos desde Cero**.
+Bienvenido al **Programa de Análisis de Datos desde Cero**, un recorrido práctico para aprender análisis de datos **empezando por SQL** y avanzando hacia otras herramientas del oficio.
 
-Este curso te enseña SQL desde cero, orientado al mundo real del análisis de datos: KPIs, reportes, tendencias y business intelligence.
-
----
-
-## 🎯 ¿Qué aprenderás?
-
-- 📘 **Básicos:** SELECT, WHERE, ORDER BY, agregaciones, funciones.
-- 📗 **Intermedios:** JOINs, GROUP BY, subconsultas.
-- 📙 **Avanzados:** Window Functions, CTEs, subconsultas correlacionadas.
-- 📕 **Objetos de BD:** Vistas, procedimientos, triggers, transacciones.
-- 📓 **Administración:** Usuarios, permisos, backups, errores frecuentes.
-- 📔 **Referencia Rápida:** Chuleta de operadores, funciones y JOINs.
+Este programa está pensado para personas que **empiezan desde cero** y quieren construir una base sólida, con práctica real y un proyecto de negocio que crece contigo.
 
 ---
 
-## 🗺️ Este curso es la Fase 1 de un programa completo
+## 🎯 ¿Qué vas a aprender?
+
+El programa está organizado en **fases**. Cada fase cubre una herramienta o conjunto de herramientas del análisis de datos.
 
 | Fase | Tema | Estado |
 |------|------|--------|
@@ -31,33 +22,60 @@ Este curso te enseña SQL desde cero, orientado al mundo real del análisis de d
 
 ---
 
-## 🛢️ Bases de datos de práctica
+## 🚀 Empezar por la Fase 1 · SQL
 
-- **world:** [descarga oficial MySQL](https://dev.mysql.com/doc/index-other.html)
-- **employees:** [GitHub datacharmer/test_db](https://github.com/datacharmer/test_db)
-- **Proyecto del curso:** Sistema de Ventas / Facturación / Cobranza (lo construiremos juntos).
+La **Fase 1** es la puerta de entrada al programa. En ella aprenderás SQL desde cero, orientado al mundo real del análisis de datos: KPIs, reportes, tendencias y business intelligence.
 
----
-
-## 🎯 Proyecto del curso
-
-A lo largo del curso construirás un **Sistema de Ventas y Cobranza** completo:
-
-- Clientes, productos, facturas, pagos.
-- Reportes de ventas por período.
-- Análisis de clientes morosos.
-- KPIs de negocio.
-
-**Al terminar, tendrás una BD real funcionando.** 🎉
+👉 **[Ir a Fase 1 · SQL](fase-1/index.md)**
 
 ---
 
-## 🚀 Cómo usar este curso
+## 🛢️ Entornos de práctica
 
-1. Ve a la sección **0. Introducción** para empezar.
-2. Sigue el orden de las secciones.
-3. Practica cada ejemplo en tu propia base de datos.
-4. Resuelve los ejercicios propuestos.
-5. Construye el proyecto paso a paso.
+A lo largo del programa trabajarás con **tres entornos de datos**, en complejidad creciente:
 
-¡Empecemos! 🚀
+1. **`world`** — Base de datos pública y pequeña. Ideal para los primeros pasos.
+2. **`employees`** — Base de datos mediana con relaciones más realistas.
+3. **Proyecto del curso** — Sistema de **Ventas / Facturación / Cobranza** que construirás tú mismo a lo largo de la Fase 1.
+
+---
+
+## 🎯 Proyecto transversal
+
+Desde el primer día trabajarás en un **proyecto empresarial real**: un sistema de **Ventas, Facturación y Cobranza**.
+
+Cada sección del curso sumará una pieza a ese proyecto. Al terminarlo, tendrás:
+
+- Un modelo de datos coherente.
+- Consultas de negocio útiles (ventas por período, clientes morosos, KPIs).
+- Un caso real que podrás mostrar como portafolio.
+
+---
+
+## 🚫 ¿Qué NO es este programa?
+
+Para no generar expectativas equivocadas:
+
+- **No es un curso de DBA.** No aprenderás a administrar servidores de bases de datos a nivel profesional.
+- **No es un curso de backend.** No verás cómo construir APIs, servicios web ni aplicaciones.
+- **No es un curso de ERP.** No cubriremos sistemas empresariales completos ni su gestión.
+
+Es un programa de **análisis de datos**. La administración de bases de datos aparece solo como conocimiento básico necesario para analizar datos con soltura.
+
+---
+
+## 🧭 ¿Cómo usar este programa?
+
+1. Empieza por la **Fase 1 · SQL**, en orden.
+2. Cada tema tiene teoría, ejemplos, errores comunes y práctica en tres niveles: 🟢 guiada, 🟡 autónoma y 🔴 caso de negocio.
+3. No te saltes los temas: cada uno construye sobre el anterior.
+4. Practica cada ejemplo en tu propia base de datos. **Leer no es aprender; hacer, sí.**
+5. Al terminar la Fase 1, tendrás una base sólida de SQL y un proyecto real funcionando.
+
+---
+
+## ❓ ¿Necesito conocimientos previos?
+
+**No.** Este programa está diseñado para empezar desde cero absoluto. Si sabes usar un ordenador, puedes hacerlo.
+
+Lo único que necesitas es constancia. La analítica de datos se aprende **practicando**, no memorizando.

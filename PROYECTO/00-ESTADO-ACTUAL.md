@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto — Programa de Análisis de Datos desde Cero
 
-**Última actualización:** 2025-10-02 (sesión 5d)
+**Última actualización:** 2025-10-03 (sesión 5e)
 
 ## 🎯 Fase actual
 Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Introducción y Entorno están definidos (falta escribirlos). Siguiente gran bloque: definir temas de Consultas Esenciales.
@@ -18,14 +18,18 @@ Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Int
     - Sección 1 completa (9 temas, 1.1 a 1.9)
     - Sección 2 completa (2 temas, 2.1 y 2.2)
     - Columna "código original" para trazabilidad
+- **Sesión 5e (hoy):**
+  - Reescrito `docs/index.md` como portada del **programa** (no de la Fase 1)
+  - Decisión firme: IA se aborda como **tema final en Proyecto Final (10.x)**, no como eje transversal
+  - Enfoque IA: **principios, no herramientas**
+  - Mención breve sobre IA en 1.9 cuando se reescriba
 
 ## 🔜 Próximos pasos
 1. Definir la lista de temas de Sección 3 · Consultas Esenciales
-2. Escribir los temas 0.6b (configuración inicial), 0.9 (proyecto) y 0.10 (cómo usar la guía)
+2. Escribir los temas 0.6b, 0.9 y 0.10
 3. Escribir los temas 0.7 y 0.8 en `02-fundamentos-bd/`
 4. Reescribir 1.1 a 1.6 con la plantilla de 13 pasos
-5. Reescribir `docs/index.md` (sigue obsoleto)
-6. Actualizar `manual-continuidad.html`
+5. Actualizar `manual-continuidad.html`
 
 ## 📌 Decisiones firmes
 - **Arquitectura:** 11 secciones + 2 grupos
@@ -46,6 +50,7 @@ Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Int
 ## 📌 Pendientes para el final de la Fase 1
 - Abrir enlaces externos en pestaña nueva: evaluar HTML o JS global
 - Mermaid: evaluar activación
+- **IA:** se enseña al final, en Proyecto Final (10.x). Principios, no herramientas. No es eje transversal.
 - Página "Índice del curso" con tabla de avance
 - Widget de progreso en portada
 - Certificado del curso (evaluar legalidad al final)

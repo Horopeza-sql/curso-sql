@@ -89,3 +89,19 @@ Sin temas definidos aún.
 2. Escribir los temas 1.7 a 1.9 (0.6b, 0.9, 0.10) y los temas 2.1 y 2.2 (0.7, 0.8).
 3. Reescribir 1.1 a 1.6 con la plantilla de 13 pasos.
 4. Pasar estados de 🟨 a 🟩 cuando cada tema esté revisado.
+
+---
+
+## Decisión transversal: IA en el curso
+
+- La IA **no se aborda como eje transversal** ni se integra en cada tema.
+- Se enseña **una sola clase al final**, dentro de la sección **10 · Proyecto Final**, como tema 10.x.
+- Enfoque: **principios, no herramientas**. Se enseñan principios (verificar, criticar, entender antes de aplicar) y solo se mencionan herramientas concretas como ejemplos.
+- Motivo: los modelos y herramientas de IA cambian cada pocos meses; los principios, no.
+- En **1.9 · Cómo usar esta guía** se incluirá una mención breve a que la IA se verá al final del programa.
+- Contenido previsto del tema 10.x:
+  - Cómo pedir a la IA que **explique** una consulta que no entiendes (no que la escriba).
+  - Cómo pedir que **critique** tu consulta en lugar de reescribirla.
+  - Errores típicos de la IA en SQL: JOINs mal planteados, NULLs ignorados, agregaciones sin GROUP BY correcto, filtros mal ubicados.
+  - Cuándo **NO** usar IA: datos sensibles, decisiones críticas sin verificar, cuando no entiendes el resultado.
+  - Ejercicio final: la IA te da una consulta con un error sutil, encuéntralo.
