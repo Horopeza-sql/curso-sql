@@ -46,6 +46,24 @@
 | 2.2 | 0.8 | Diseño de BD y normalización | Aplicar 1FN, 2FN y 3FN a un caso simple, justificando cada paso | Básico | proyecto | Tabla antes/después normalizada | 🟢 | Normaliza una tabla hasta 3FN sin omitir pasos | ⬜ |
 
 ---
+## Sección 3 · Consultas Esenciales
+
+**Nota pedagógica:** el orden de las cláusulas (`SELECT → FROM → WHERE → ORDER BY → LIMIT`) se enseña completo y con calma en 3.1. En los temas siguientes se refuerza por cláusula nueva, mostrando dónde encaja en la estructura, sin repetir el orden completo. Se distingue explícitamente entre orden de escritura y orden de ejecución del motor.
+
+| Código | Cód. orig. | Tema | Competencia | Nivel | Entorno | Evidencia | Práctica | Criterio | Estado |
+|---|---|---|---|---|---|---|---|---|---|
+| 3.1 | — | Tu primera consulta: `SELECT` | Escribir una consulta `SELECT` básica contra una tabla conocida y leer su resultado | Básico | world | 5 consultas ejecutadas sobre `city` y `country` | 🟢 | Escribe `SELECT * FROM tabla` sin error y explica el resultado | ⬜ |
+| 3.2 | — | Elegir columnas y usar alias | Seleccionar columnas específicas, renombrarlas con `AS` y aplicar aritmética básica | Básico | world | Consulta con 3 columnas y 1 alias | 🟢 | Distingue `SELECT *` de `SELECT col1, col2` y usa `AS` correctamente | ⬜ |
+| 3.3 | — | Filtrar filas con `WHERE` | Filtrar filas según una condición simple y justificar por qué se descartan las demás | Básico | world | 5 consultas con `WHERE` sobre `country` | 🟢🟡 | Reconoce que `WHERE` actúa antes de `SELECT` | ⬜ |
+| 3.4 | — | Operadores de comparación | Aplicar los seis operadores (`=`, `<>`, `<`, `>`, `<=`, `>=`) en filtros reales | Básico | world | Ejercicio con los 6 operadores | 🟢 | Usa el operador correcto según el tipo de dato | ⬜ |
+| 3.5 | — | Combinar condiciones: `AND`, `OR`, `NOT` | Combinar condiciones con lógica booleana y predecir el resultado antes de ejecutar | Básico | world | 5 consultas con 2+ condiciones | 🟢🟡 | Predice correctamente el resultado de `AND`/`OR`/`NOT` | ⬜ |
+| 3.6 | — | Filtros especiales: `BETWEEN`, `IN`, `LIKE` | Usar atajos de filtrado para rangos, listas y patrones de texto | Básico | world | 5 consultas (una por operador) | 🟢🟡 | Elige el operador más adecuado para cada caso | ⬜ |
+| 3.7 | — | Ordenar resultados: `ORDER BY` | Ordenar resultados ascendente y descendentemente, incluyendo orden por varias columnas | Básico | employees | Reporte de empleados ordenado por salario y fecha | 🟢🟡 | Ordena por 2+ columnas y explica el criterio de desempate | ⬜ |
+| 3.8 | — | Limitar y paginar: `LIMIT` y `OFFSET` | Limitar el número de filas devueltas y construir paginación simple | Básico | employees | Consulta con `LIMIT` + `OFFSET` | 🟢 | Explica qué hace `LIMIT 10 OFFSET 20` | ⬜ |
+| 3.9 | — | Valores únicos: `DISTINCT` | Eliminar duplicados en el resultado y distinguir cuándo aplica a una o varias columnas | Básico | employees | Consulta con `DISTINCT` sobre 1 y 2 columnas | 🟢🟡 | Diferencia `DISTINCT col1` de `DISTINCT col1, col2` | ⬜ |
+| 3.10 | — | Comentarios y estilo de escritura SQL | Aplicar comentarios (`--`, `/* */`), indentación, mayúsculas y nombres consistentes | Básico | — | Archivo `.sql` con 5 consultas bien formateadas | 🟢 | Una persona ajena entiende las consultas sin pedir explicación | ⬜ |
+
+---
 
 ## Secciones 3 a 11 — esqueleto provisional
 
@@ -53,7 +71,7 @@ Sin temas definidos aún.
 
 | Sección | Temas definidos | Temas escritos | Estado global |
 |---|---|---|---|
-| 3 · Consultas Esenciales | 0 | 0 | ⬜ |
+| 3 · Consultas Esenciales | 10 | 0 | ⬜ |
 | 4 · Análisis y Agregaciones | 0 | 0 | ⬜ |
 | 5 · Relaciones y Modelado | 0 | 0 | ⬜ |
 | 6 · Diseño y Objetos | 0 | 0 | ⬜ |

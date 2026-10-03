@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto — Programa de Análisis de Datos desde Cero
 
-**Última actualización:** 2025-10-03 (sesión 5e)
+**Última actualización:** 2025-10-03 (sesión 5f)
 
 ## 🎯 Fase actual
 Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Introducción y Entorno están definidos (falta escribirlos). Siguiente gran bloque: definir temas de Consultas Esenciales.
@@ -23,10 +23,15 @@ Matriz Maestra de Competencias con Sección 1 y 2 detalladas. Los 9 temas de Int
   - Decisión firme: IA se aborda como **tema final en Proyecto Final (10.x)**, no como eje transversal
   - Enfoque IA: **principios, no herramientas**
   - Mención breve sobre IA en 1.9 cuando se reescriba
+- **Sesión 5f (hoy):**
+  - Definida la lista completa de temas de Sección 3 · Consultas Esenciales (10 temas, 3.1 a 3.10)
+  - Añadidos a la matriz con competencia, evidencia, práctica y criterio
+  - Nota pedagógica sobre orden de cláusulas: se enseña completo en 3.1, se refuerza por cláusula nueva en cada tema
+  - Distinción explícita orden de escritura vs. orden de ejecución
 
 ## 🔜 Próximos pasos
-1. Definir la lista de temas de Sección 3 · Consultas Esenciales
-2. Escribir los temas 0.6b, 0.9 y 0.10
+1. Escribir 3.1 con la plantilla de 13 pasos (primer tema del curso)
+2. Escribir los temas 0.6b, 0.9 y 0.10 (últimos de Introducción)
 3. Escribir los temas 0.7 y 0.8 en `02-fundamentos-bd/`
 4. Reescribir 1.1 a 1.6 con la plantilla de 13 pasos
 5. Actualizar `manual-continuidad.html`
